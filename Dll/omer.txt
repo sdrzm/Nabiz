@@ -5,3 +5,6 @@
 04|INFO|Caller Method: Button1_Click, Line: 18
 2020-03-10|INFO|Caller Method: Button1_Click, Line: 18
 2020-03-10 22:22:54|INFO|Caller Method: Button1_Click, Line: 18
+2020-03-10 23:06:31|ERROR|Unable to load DLL 'SQLite.Interop.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+2020-03-10 23:12:39|ERROR|Unable to load DLL 'SQLite.Interop.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+2020-03-10 23:14:15|INFO|Caller Method: Button1_Click, Line: 18

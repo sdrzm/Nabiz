@@ -14,8 +14,7 @@ namespace BigSoft.Framework.Util
 
         public static void LogException(Exception ex, string message)
         {
-            logger.Error(ex);
-            logger.Error(message);
+            logger.Error(ex, message);
         }
     }
 }

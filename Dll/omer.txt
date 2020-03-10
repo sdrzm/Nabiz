@@ -1,0 +1,7 @@
+2020-03-10 21:52:14.2818|INFO|BigSoft.Framework.Util.BsTrace|Caller Method: Button1_Click, Line: 18
+2020-03-10 21:58:13.9556|INFO|Caller Method: Button1_Click, Line: 18
+2020/03/10 22:00:45.066|INFO|Caller Method: Button1_Click, Line: 18
+2020/03/10 22:00:49.159|INFO|Caller Method: Button1_Click, Line: 18
+04|INFO|Caller Method: Button1_Click, Line: 18
+2020-03-10|INFO|Caller Method: Button1_Click, Line: 18
+2020-03-10 22:22:54|INFO|Caller Method: Button1_Click, Line: 18

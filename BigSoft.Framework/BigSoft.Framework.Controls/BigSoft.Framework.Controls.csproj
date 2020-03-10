@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5861597C-C1AD-45E5-B2A1-7EBA87CC8A7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BigSoft.Framework.Controls</RootNamespace>
+    <AssemblyName>BigSoft.Framework.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Dll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Dll\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BSDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BSDataGridView.Designer.cs">
+      <DependentUpon>BSDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BSListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BSListView.Designer.cs">
+      <DependentUpon>BSListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BSStandartToolStrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BSStandartToolStrip.Designer.cs">
+      <DependentUpon>BSStandartToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BSTabBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BSTabBrowser.Designer.cs">
+      <DependentUpon>BSTabBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BSTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BSTextBox.Designer.cs">
+      <DependentUpon>BSTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BSDataGridView.resx">
+      <DependentUpon>BSDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BSListView.resx">
+      <DependentUpon>BSListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BSStandartToolStrip.resx">
+      <DependentUpon>BSStandartToolStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BSTabBrowser.resx">
+      <DependentUpon>BSTabBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BSTextBox.resx">
+      <DependentUpon>BSTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="Resources\popup_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popup_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popup_question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popup_success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popup_warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BigSoft.Framework.Util\BigSoft.Framework.Util.csproj">
+      <Project>{da7fe9fb-ca73-48e8-a87f-e6a4be3ca724}</Project>
+      <Name>BigSoft.Framework.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popup_err.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

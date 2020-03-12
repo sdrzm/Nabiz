@@ -24,6 +24,9 @@ namespace Nabiz.UI
             OUserGet get = new OUserGet();
             var result = get.Execute();
             dgvUser.BsDataSourceList(result.Value);
+
+            //advancedDataGridView1.DataSource = result.Value;
+            bsAdvDataGridView1.DataSource = result.Value;
         }
     }
 }

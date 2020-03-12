@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=1.1.24312.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DG.AdvancedDataGridView.1.1.24312.6\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FastMember.1.5.0\lib\net461\FastMember.dll</HintPath>
     </Reference>
@@ -48,6 +51,10 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BsAdvDataGridView.cs" />
+    <Compile Include="BsAdvDataGridView.Designer.cs">
+      <DependentUpon>BsAdvDataGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="BSDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>

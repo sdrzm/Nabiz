@@ -1,7 +1,6 @@
 ﻿using BigSoft.Framework.Util;
 using Nabiz.Business;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Nabiz.UI
@@ -24,8 +23,7 @@ namespace Nabiz.UI
         {
             OUserGet get = new OUserGet();
             var result = get.Execute();
-            var table = BsCommon.ConvertToDatatable(result.Value);
-            dgvUser.DataSource = table;
+            dgvUser.BsDataSourceList(result.Value);
         }
     }
 }

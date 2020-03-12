@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FastMember;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -11,28 +14,20 @@ namespace BigSoft.Framework.Controls
     {
         public DataGridViewRow CurrentGridRow { get; set; }
 
-        public BsDataGridView()
-        {
-            InitializeComponent();
-        }
-
         public BsDataGridView(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
         }
 
-        public T DataRowToObject<T>(DataGridViewRow gridRow) where T : class, new()
+        private static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)
         {
-            T obj = new T();
-
-            foreach (var prop in obj.GetType().GetProperties())
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(source, members))
             {
-                PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
-                propertyInfo.SetValue(obj, Convert.ChangeType(gridRow.Cells[prop.Name].Value, propertyInfo.PropertyType), null);
+                table.Load(reader);
             }
-
-            return obj;
+            return table;
         }
 
         private void BindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -65,6 +60,24 @@ namespace BigSoft.Framework.Controls
             {
                 row.DefaultCellStyle.BackColor = (bool)row.Cells["IsGreenVf"].Value ? Color.Green : Color.Red;
             }
+        }
+
+        public void BsDataSourceList<T>(IEnumerable<T> List)
+        {
+            DataSource = ConvertToDatatable(List);
+        }
+
+        public T DataRowToObject<T>(DataGridViewRow gridRow) where T : class, new()
+        {
+            T obj = new T();
+
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+                PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
+                propertyInfo.SetValue(obj, Convert.ChangeType(gridRow.Cells[prop.Name].Value, propertyInfo.PropertyType), null);
+            }
+
+            return obj;
         }
     }
 }

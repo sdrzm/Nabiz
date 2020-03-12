@@ -1,7 +1,4 @@
-﻿using FastMember;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace BigSoft.Framework.Util
@@ -89,16 +86,6 @@ namespace BigSoft.Framework.Util
                     }
                 }
             }
-        }
-
-        public static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)
-        {
-            DataTable table = new DataTable();
-            using (var reader = ObjectReader.Create(source, members))
-            {
-                table.Load(reader);
-            }
-            return table;
         }
     }
 }

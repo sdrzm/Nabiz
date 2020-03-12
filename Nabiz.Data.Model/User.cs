@@ -1,6 +1,6 @@
 ﻿namespace Nabiz.Data.Model
 {
-    internal class User : BaseObject
+    public class User : BaseObject
     {
         public string MacAddress { get; set; }
     }

@@ -1,13 +1,16 @@
-﻿using System.Drawing;
+﻿using FastMember;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BigSoft.Framework.Util
 {
     public static class BsCommon
     {
-        public static BsOperationResult Validate(params Control[] controls)
+        public static BsOpResultBase Validate(params Control[] controls)
         {
-            BsOperationResult result = new BsOperationResult();
+            BsOpResultBase result = new BsOpResultBase();
 
             foreach (Control control in controls)
             {
@@ -16,7 +19,7 @@ namespace BigSoft.Framework.Util
                     if (string.IsNullOrEmpty(control.Text))
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.BsResult = BsResult.UserError;
+                        result.IsSuccessful = Success.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else
@@ -31,7 +34,7 @@ namespace BigSoft.Framework.Util
                     if (lstView.SelectedItems.Count == 0)
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.BsResult = BsResult.UserError;
+                        result.IsSuccessful = Success.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else
@@ -46,7 +49,7 @@ namespace BigSoft.Framework.Util
                     if (comboBox.SelectedIndex == -1)
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.BsResult = BsResult.UserError;
+                        result.IsSuccessful = Success.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else
@@ -86,6 +89,16 @@ namespace BigSoft.Framework.Util
                     }
                 }
             }
+        }
+
+        public static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)
+        {
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(source, members))
+            {
+                table.Load(reader);
+            }
+            return table;
         }
     }
 }

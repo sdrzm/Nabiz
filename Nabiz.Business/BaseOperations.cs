@@ -6,13 +6,13 @@ using System.Runtime.CompilerServices;
 
 namespace Nabiz.Business
 {
-    public abstract class BaseOperations
+    public abstract class BaseOperations<T> where T : class
     {
-        protected BsOperationResult OperationResult { get; set; } = new BsOperationResult();
+        protected BsOpResult<T> OperationResult { get; set; } = new BsOpResult<T>();
         protected BaseRepository BaseRepository { get; set; }
         protected SQLiteConnection SQLiteConnection { get; set; }
 
-        public BsOperationResult Execute([CallerMemberName] string metod = "", [CallerLineNumber] int satir = -1)
+        public BsOpResult<T> Execute([CallerMemberName] string metod = "", [CallerLineNumber] int satir = -1)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Nabiz.Business
                     DoJob();
                     tran.Commit();
 
-                    if (OperationResult.BsResult == BsResult.Successful)
+                    if (OperationResult.IsSuccessful == Success.Successful)
                         OperationResult.Message = "Başarıyla tamamlandı";
                 }
             }
@@ -37,12 +37,12 @@ namespace Nabiz.Business
                 BsTrace.LogException(ex, ex.GetType().Name);
 
                 OperationResult.Message = ex.Message;
-                OperationResult.BsResult = ex.BsResult;
+                OperationResult.IsSuccessful = ex.BsResult;
             }
             catch (Exception ex)
             {
                 OperationResult.Message = ex.Message;
-                OperationResult.BsResult = BsResult.SystemError;
+                OperationResult.IsSuccessful = Success.SystemError;
                 OperationResult.Exception = ex.InnerException;
                 BsTrace.LogException(ex, ex.Message);
             }
@@ -51,5 +51,9 @@ namespace Nabiz.Business
         }
 
         protected abstract void DoJob();
+    }
+
+    public abstract class BaseOperationsDefault : BaseOperations<string>
+    {
     }
 }

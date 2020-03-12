@@ -4,19 +4,19 @@ namespace BigSoft.Framework.Util
 {
     public static class BsMessageBox
     {
-        public static void Show(BsOperationResult result)
+        public static void Show(BsOpResultBase result)
         {
-            switch (result.BsResult)
+            switch (result.IsSuccessful)
             {
-                case BsResult.Successful:
+                case Success.Successful:
                     MessageBox.Show(result.Message, "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
-                case BsResult.UserError:
+                case Success.UserError:
                     MessageBox.Show(result.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
-                case BsResult.SystemError:
+                case Success.SystemError:
                     MessageBox.Show(result.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }

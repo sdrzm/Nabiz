@@ -61,6 +61,10 @@
       <Project>{da7fe9fb-ca73-48e8-a87f-e6a4be3ca724}</Project>
       <Name>BigSoft.Framework.Util</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nabiz.Data.Model\Nabiz.Data.Model.csproj">
+      <Project>{cb2ab3f2-6db3-47d4-8b9c-e414cc29c49d}</Project>
+      <Name>Nabiz.Data.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nabiz.Data\Nabiz.Data.csproj">
       <Project>{0b1c980d-2414-49d5-a1e3-3f13ccc6052d}</Project>
       <Name>Nabiz.Data</Name>

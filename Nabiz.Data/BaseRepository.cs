@@ -7,7 +7,7 @@ namespace Nabiz.Data
 {
     public class BaseRepository
     {
-        //türeyen sınıflar kullanacak
+        //Türeyen sınıflar kullanacak
         protected readonly SQLiteConnection BaseConnection;
 
         //Türeyen sınıflardan BaseOperation'da üretilen connection geliyor.
@@ -16,23 +16,14 @@ namespace Nabiz.Data
             BaseConnection = cnn;
         }
 
-        //Returns a new connection.
+        /// <returns>Returns a new connection.</returns>
         public static SQLiteConnection SimpleDbConnection()
         {
             string dbFile = Environment.CurrentDirectory + "\\NabizDb.sqlite";
             return new SQLiteConnection("Data Source=" + dbFile);
         }
 
-        public List<T> BsGetList<T>(string query, object param = null)
-        {
-            //Foreign Key constrait activation.
-            BaseConnection.Execute("PRAGMA foreign_keys = ON;");
-            return BaseConnection.Query<T>(query, param).AsList();
-        }
-
-        /// <returns>
-        /// The sum of two integers.
-        /// </returns>
+        /// <returns>Returns affected row number.</returns>
         public int BsExecute(string query, object param = null)
         {
             //Foreign Key constrait activation.
@@ -45,6 +36,13 @@ namespace Nabiz.Data
             //Foreign Key constrait activation.
             BaseConnection.Execute("PRAGMA foreign_keys = ON;");
             BaseConnection.Execute(query, param);
+        }
+
+        public List<T> BsGetList<T>(string query, object param = null)
+        {
+            //Foreign Key constrait activation.
+            BaseConnection.Execute("PRAGMA foreign_keys = ON;");
+            return BaseConnection.Query<T>(query, param).AsList();
         }
     }
 }

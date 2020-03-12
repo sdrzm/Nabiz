@@ -53,7 +53,7 @@ namespace BigSoft.Framework.Controls
         {
             decimal result;
             string text = Text.Replace(".", "");
-            
+
             Decimal.TryParse(text, NumberStyles.Currency, CultureInfo.CurrentCulture, out result);
             return result;
         }
@@ -62,7 +62,7 @@ namespace BigSoft.Framework.Controls
         {
             if (IsNumeric && ThousandSeparator && !String.IsNullOrEmpty(Text) && !IsMoneyBox)
             {
-                Text = Decimal.Parse(Text, NumberStyles.Currency ).ToString("N0");
+                Text = Decimal.Parse(Text, NumberStyles.Currency).ToString("N0");
             }
 
             //SelectionStart = Text.Length;

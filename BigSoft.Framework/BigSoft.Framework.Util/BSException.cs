@@ -6,12 +6,12 @@ namespace BigSoft.Framework.Util
     [Serializable]
     public class BsException : Exception
     {
-        public BsResult BsResult { get; }
+        public Success BsResult { get; }
 
         public BsException() : base()
         { }
 
-        public BsException(string msg, BsResult result)
+        public BsException(string msg, Success result)
             : base(msg)
         {
             BsResult = result;

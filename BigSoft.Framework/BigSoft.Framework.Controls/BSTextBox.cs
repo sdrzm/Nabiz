@@ -5,16 +5,30 @@ using System.Windows.Forms;
 
 namespace BigSoft.Framework.Controls
 {
-    public partial class BsTextBox : TextBox
+    public partial class BsTextBox : TextBox, IBsMappable
     {
-        [Category("OkProperties"), DefaultValue(false)]
-        public bool IsNumeric { get; set; }
+        #region Public Properties
 
-        [Category("OkProperties"), DefaultValue(false)]
+        [Category("BsControls")]
+        [DefaultValue("")]
+        public string BsDataClassName { get; set; }
+
+        [Category("BsControls")]
+        [DefaultValue("")]
+        public string BsDataFieldName { get; set; }
+
+        [Category("BsControls"), DefaultValue(false)]
         public bool IsMoneyBox { get; set; }
 
-        [Category("OkProperties"), DefaultValue(false)]
+        [Category("BsControls"), DefaultValue(false)]
+        public bool IsNumeric { get; set; }
+
+        [Category("BsControls"), DefaultValue(false)]
         public bool ThousandSeparator { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
 
         public BsTextBox()
         {
@@ -24,39 +38,12 @@ namespace BigSoft.Framework.Controls
         public BsTextBox(IContainer container)
         {
             container.Add(this);
-
             InitializeComponent();
         }
 
-        protected override void OnKeyPress(KeyPressEventArgs e)
-        {
-            if (!IsNumeric)
-                return;
-            base.OnKeyPress(e);
+        #endregion Public Constructors
 
-            if ((Char.IsDigit(e.KeyChar) || e.KeyChar == '\b'))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        public int GetInt32()
-        {
-            int value;
-            string text = Text.Replace(".", "");
-
-            Int32.TryParse(text, out value);
-            return value;
-        }
-
-        public decimal GetDecimal()
-        {
-            decimal result;
-            string text = Text.Replace(".", "");
-
-            Decimal.TryParse(text, NumberStyles.Currency, CultureInfo.CurrentCulture, out result);
-            return result;
-        }
+        #region Private Methods
 
         private void OkTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -64,9 +51,54 @@ namespace BigSoft.Framework.Controls
             {
                 Text = Decimal.Parse(Text, NumberStyles.Currency).ToString("N0");
             }
-
-            //SelectionStart = Text.Length;
-            //SelectionLength = 0;
         }
+
+        #endregion Private Methods
+
+        #region Protected Methods
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            if (!IsNumeric)
+                return;
+            base.OnKeyPress(e);
+
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
+        }
+
+        #endregion Protected Methods
+
+        #region Public Methods
+
+        public decimal GetDecimal()
+        {
+            string text = Text.Replace(".", "");
+
+            decimal.TryParse(text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal result);
+            return result;
+        }
+
+        public int GetInt32()
+        {
+            string text = Text.Replace(".", "");
+
+            int.TryParse(text, out int value);
+            return value;
+        }
+
+        public object GetValue(Type type)
+        {
+            return this.Text;
+        }
+
+        public void SetValue(object value)
+        {
+            if (value != null)
+            {
+                this.Text = (String)value;
+            }
+        }
+
+        #endregion Public Methods
     }
 }

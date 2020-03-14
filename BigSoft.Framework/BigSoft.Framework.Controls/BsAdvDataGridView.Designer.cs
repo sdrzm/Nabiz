@@ -28,18 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            AlternatingRowsDefaultCellStyle = new System.Windows.Forms.DataGridViewCellStyle
-            {
-                BackColor = System.Drawing.Color.FromArgb(255, 192, 192)
-            };
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // BsAdvDataGridView
+            // 
             AllowUserToAddRows = false;
             AllowUserToDeleteRows = false;
             AllowUserToResizeRows = false;
             MultiSelect = false;
             ReadOnly = true;
+            RowTemplate.Height = 20;
             RowHeadersVisible = false;
-            RowTemplate.Height = 13;
+            SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.SelectionChanged += new System.EventHandler(this.BsAdvDataGridView_SelectionChanged);
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

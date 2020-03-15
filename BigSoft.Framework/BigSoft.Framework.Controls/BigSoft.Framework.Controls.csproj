@@ -52,10 +52,6 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BsAdvDataGridView.cs" />
-    <Compile Include="BsAdvDataGridView.Designer.cs">
-      <DependentUpon>BsAdvDataGridView.cs</DependentUpon>
-    </Compile>
     <Compile Include="BSDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -102,6 +98,10 @@
       <DependentUpon>Resource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BsAdvDataGridView.cs" />
+    <Compile Include="BsAdvDataGridView.Designer.cs">
+      <DependentUpon>BsAdvDataGridView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

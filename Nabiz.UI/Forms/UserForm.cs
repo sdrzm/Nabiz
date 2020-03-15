@@ -33,7 +33,6 @@ namespace Nabiz.UI.Forms
             OUserGet get = new OUserGet();
             var result = get.Execute();
             BindDataAsList(result.Value);
-            FillScreen(BsAdgv.DataRowToObject<User>(BsAdgv.CurrentGridRow));
         }
 
         #endregion Events

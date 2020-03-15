@@ -3,11 +3,10 @@ using BigSoft.Framework.Util;
 using Nabiz.Business;
 using Nabiz.Data.Model;
 using System;
-using System.Windows.Forms;
 
-namespace Nabiz.UI
+namespace Nabiz.UI.Forms
 {
-    public partial class UserForm : BsForm
+    public partial class UserForm : BsFormGrid
     {
         #region Public Constructors
 
@@ -18,7 +17,12 @@ namespace Nabiz.UI
 
         #endregion Public Constructors
 
-        #region Private Methods
+        #region Events
+
+        private void BsAdgv_SelectionChanged(object sender, EventArgs e)
+        {
+            FillScreen(BsAdgv.DataRowToObject<User>(BsAdgv.CurrentGridRow));
+        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -31,19 +35,10 @@ namespace Nabiz.UI
         {
             OUserGet get = new OUserGet();
             var result = get.Execute();
-            dgvUser.BsDataSourceList(result.Value);
-
-            //advancedDataGridView1.DataSource = result.Value;
-            bsAdvDataGridView1.DataSource = result.Value;
-            //advancedDataGridView1.DataSource = result.Value;
-            FillScreen(bsAdvDataGridView1.DataRowToObject<User>(bsAdvDataGridView1.CurrentGridRow));
+            BindDataAsList(result.Value);
+            FillScreen(BsAdgv.DataRowToObject<User>(BsAdgv.CurrentGridRow));
         }
 
-        #endregion Private Methods
-
-        private void bsAdvDataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            FillScreen(bsAdvDataGridView1.DataRowToObject<User>(bsAdvDataGridView1.CurrentGridRow));
-        }
+        #endregion Events
     }
 }

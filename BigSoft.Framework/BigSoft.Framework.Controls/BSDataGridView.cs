@@ -12,13 +12,23 @@ namespace BigSoft.Framework.Controls
 {
     public partial class BsDataGridView : DataGridView
     {
+        #region Public Properties
+
         public DataGridViewRow CurrentGridRow { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
 
         public BsDataGridView(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
         }
+
+        #endregion Public Constructors
+
+        #region Private Methods
 
         private static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)
         {
@@ -48,11 +58,6 @@ namespace BigSoft.Framework.Controls
             }
         }
 
-        private void OkDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            CurrentGridRow = ((DataGridView)sender).CurrentRow;
-        }
-
         private void OkDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (!Columns.Contains("IsGreenVf")) return;
@@ -61,6 +66,15 @@ namespace BigSoft.Framework.Controls
                 row.DefaultCellStyle.BackColor = (bool)row.Cells["IsGreenVf"].Value ? Color.Green : Color.Red;
             }
         }
+
+        private void OkDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            CurrentGridRow = ((DataGridView)sender).CurrentRow;
+        }
+
+        #endregion Private Methods
+
+        #region Public Methods
 
         public void BsDataSourceList<T>(IEnumerable<T> List)
         {
@@ -79,5 +93,7 @@ namespace BigSoft.Framework.Controls
 
             return obj;
         }
+
+        #endregion Public Methods
     }
 }

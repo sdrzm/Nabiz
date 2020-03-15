@@ -5,3 +5,6 @@ dotnet_diagnostic.CA1031.severity = silent
 
 # RCS1139: Add summary element to documentation comment.
 dotnet_diagnostic.RCS1139.severity = silent
+
+# S125: Sections of code should not be commented out
+dotnet_diagnostic.S125.severity = silent

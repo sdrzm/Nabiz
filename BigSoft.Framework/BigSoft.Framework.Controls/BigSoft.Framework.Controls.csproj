@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
@@ -60,6 +61,12 @@
     </Compile>
     <Compile Include="BSDataGridView.Designer.cs">
       <DependentUpon>BSDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BsFormGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BsFormGrid.Designer.cs">
+      <DependentUpon>BsFormGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="BSForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +95,7 @@
     <Compile Include="BSTextBox.Designer.cs">
       <DependentUpon>BSTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IBsControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource.Designer.cs">
@@ -105,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BSForm.resx">
       <DependentUpon>BSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BsFormGrid.resx">
+      <DependentUpon>BsFormGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BSListView.resx">
       <DependentUpon>BSListView.cs</DependentUpon>
@@ -124,7 +135,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Resources\popup_error.png" />
   </ItemGroup>

@@ -31,7 +31,7 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // OkDataGridView
+            // BsDataGridView
             // 
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;

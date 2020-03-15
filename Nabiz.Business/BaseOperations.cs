@@ -8,9 +8,26 @@ namespace Nabiz.Business
 {
     public abstract class BaseOperations<T> where T : class
     {
-        protected BsOpResult<T> OperationResult { get; set; } = new BsOpResult<T>();
+        #region Protected Fields
+
+        protected BsOpResult<T> OperationResult = new BsOpResult<T>();
+
+        #endregion Protected Fields
+
+        #region Protected Properties
+
         protected BaseRepository BaseRepository { get; set; }
         protected SQLiteConnection SQLiteConnection { get; set; }
+
+        #endregion Protected Properties
+
+        #region Protected Methods
+
+        protected abstract void DoJob();
+
+        #endregion Protected Methods
+
+        #region Public Methods
 
         public BsOpResult<T> Execute([CallerMemberName] string metod = "", [CallerLineNumber] int satir = -1)
         {
@@ -50,7 +67,7 @@ namespace Nabiz.Business
             return OperationResult;
         }
 
-        protected abstract void DoJob();
+        #endregion Public Methods
     }
 
     public abstract class BaseOperationsDefault : BaseOperations<string>

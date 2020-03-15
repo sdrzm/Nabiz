@@ -88,14 +88,14 @@ namespace BigSoft.Framework.Controls
 
         public object GetValue(Type type)
         {
-            return this.Text;
+            return Text;
         }
 
         public void SetValue(object value)
         {
             if (value != null)
             {
-                this.Text = (String)value;
+                Text = (string)value;
             }
         }
 

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // BsAdvDataGridView
             // 
-            AllowUserToAddRows = false;
-            AllowUserToDeleteRows = false;
-            AllowUserToResizeRows = false;
-            MultiSelect = false;
-            ReadOnly = true;
-            RowTemplate.Height = 20;
-            RowHeadersVisible = false;
-            SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.AllowUserToAddRows = false;
+            this.AllowUserToDeleteRows = false;
+            this.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MultiSelect = false;
+            this.ReadOnly = true;
+            this.RowHeadersVisible = false;
+            this.RowTemplate.Height = 20;
+            this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SelectionChanged += new System.EventHandler(this.BsAdvDataGridView_SelectionChanged);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

@@ -7,31 +7,23 @@ namespace BigSoft.Framework.Controls
 {
     public partial class BsTabBrowser : UserControl
     {
-        private Form _mdiForm;
+        #region Private Fields
+
         private readonly Dictionary<Form, TabPage> _formsAndPages = new Dictionary<Form, TabPage>();
+        private Form _mdiForm;
+
+        #endregion Private Fields
+
+        #region Public Constructors
 
         public BsTabBrowser()
         {
             InitializeComponent();
         }
 
-        public void SetMdiForm(Form mdiForm)
-        {
-            _mdiForm = mdiForm;
-            _mdiForm.MdiChildActivate += MdiForm_MdiChildActivate;
-        }
+        #endregion Public Constructors
 
-        private void MdiForm_MdiChildActivate(object sender, EventArgs e)
-        {
-            Form form = ((Form)sender).ActiveMdiChild;
-            if (form == null)
-                return;
-
-            if (_formsAndPages.ContainsKey(form))
-                ActivatePage(form);
-            else
-                AddPage(form);
-        }
+        #region Private Methods
 
         private void ActivatePage(Form childForm)
         {
@@ -60,13 +52,16 @@ namespace BigSoft.Framework.Controls
             tabControl.Visible = true;
         }
 
-        public void DisposeTabPage(Form form)
+        private void MdiForm_MdiChildActivate(object sender, EventArgs e)
         {
-            _formsAndPages[form].Dispose();
-            _formsAndPages.Remove(form);
+            Form form = ((Form)sender).ActiveMdiChild;
+            if (form == null)
+                return;
 
-            if (_formsAndPages.Count == 0)
-                tabControl.Visible = false;
+            if (_formsAndPages.ContainsKey(form))
+                ActivatePage(form);
+            else
+                AddPage(form);
         }
 
         private void TabControl_Click(object sender, EventArgs e)
@@ -77,5 +72,26 @@ namespace BigSoft.Framework.Controls
 
             ActivatePage(form);
         }
+
+        #endregion Private Methods
+
+        #region Public Methods
+
+        public void DisposeTabPage(Form form)
+        {
+            _formsAndPages[form].Dispose();
+            _formsAndPages.Remove(form);
+
+            if (_formsAndPages.Count == 0)
+                tabControl.Visible = false;
+        }
+
+        public void SetMdiForm(Form mdiForm)
+        {
+            _mdiForm = mdiForm;
+            _mdiForm.MdiChildActivate += MdiForm_MdiChildActivate;
+        }
+
+        #endregion Public Methods
     }
 }

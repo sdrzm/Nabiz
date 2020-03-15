@@ -20,9 +20,50 @@ namespace BigSoft.Framework.Controls
 
         #region Private Fields
 
-        private readonly Dictionary<string, List<object>> _mappableControls = new Dictionary<string, List<object>>();
+        protected readonly Dictionary<string, object> _mappableControls = new Dictionary<string, object>();
 
         #endregion Private Fields
+
+        #region Events
+
+        private void BsForm_Load(object sender, EventArgs e)
+        {
+            UpdateUI(this);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            CloseTab();
+            base.OnClosing(e);
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            BsStandartToolStrip toolStrip = Controls.OfType<BsStandartToolStrip>().FirstOrDefault();
+            List<TextBox> textBoxes = Controls.OfType<TextBox>().ToList();
+            switch (keyData)
+            {
+                case (Keys.Control | Keys.S):
+                    if (toolStrip.OkSaveButtonEnabled)
+                        toolStrip.TsbSave_Click_1(null, null);
+                    return true;
+
+                case Keys.Delete:
+                    if (textBoxes.Any(a => a.Focused))
+                    {
+                        return base.ProcessCmdKey(ref msg, keyData);
+                    }
+                    else if (toolStrip.OkDeleteButtonEnabled)
+                    {
+                        toolStrip.TsbDelete_Click_1(null, null);
+                        return true;
+                    }
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        #endregion Events
 
         #region Private Methods
 
@@ -38,14 +79,14 @@ namespace BigSoft.Framework.Controls
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             //
             // BsForm
             //
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "BsForm";
-            this.Load += new System.EventHandler(this.BsForm_Load);
-            this.ResumeLayout(false);
+            ClientSize = new System.Drawing.Size(884, 461);
+            Name = "BsForm";
+            Load += BsForm_Load;
+            ResumeLayout(false);
         }
 
         private void UpdateUI(Control ctrl)
@@ -54,16 +95,14 @@ namespace BigSoft.Framework.Controls
             {
                 if (_ctrl is IBsMappable i && !string.IsNullOrEmpty(i.BsDataClassName) && !string.IsNullOrEmpty(i.BsDataFieldName))
                 {
-                    string Key = i.BsDataClassName + "~" + i.BsDataFieldName;
-                    if (_mappableControls.ContainsKey(Key))
-                    {
-                        _mappableControls[Key].Add(_ctrl);
-                    }
-                    else
-                    {
-                        List<object> controls = new List<object> { _ctrl };
-                        _mappableControls.Add(Key, controls);
-                    }
+                    string key = i.BsDataClassName + "~" + i.BsDataFieldName;
+                    if (!_mappableControls.ContainsKey(key))
+                        _mappableControls.Add(key, _ctrl);
+                }
+
+                if (_ctrl.HasChildren)
+                {
+                    UpdateUI(_ctrl);
                 }
             }
         }
@@ -71,15 +110,6 @@ namespace BigSoft.Framework.Controls
         #endregion Private Methods
 
         #region Public Methods
-
-        private static void SetControlsValue(List<object> control, object value)
-        {
-            for (int i = 0; i < control.Count; i++)
-            {
-                IBsMappable m = (IBsMappable)control[i];
-                m.SetValue(value);
-            }
-        }
 
         /// <summary>
         /// Clear all controls in form
@@ -114,27 +144,26 @@ namespace BigSoft.Framework.Controls
         }
 
         /// <summary>
-        /// Sets screens controls values using the object. Objects fields matches with controls swPomDataClass and
-        /// swPOMDAtaFieldName
+        /// Sets screens control values using the object. Objects fields matches with controls BsDataClassName and
+        /// BsDataFieldName
         /// </summary>
         /// <param name="obj">Source object that will fill screen</param>
-        /// <param name="control">Control collection that controls will be filled</param>
         public void FillScreen(object obj)
         {
             if (obj == null || obj is Array)
                 return;
 
-            string ClassName = obj.GetType().Name;
+            string className = obj.GetType().Name;
 
             foreach (PropertyInfo property in obj.GetType().GetProperties())
             {
                 if (property.PropertyType.IsSealed)
                 {
-                    if (_mappableControls.ContainsKey(ClassName + '~' + property.Name))
+                    if (_mappableControls.ContainsKey(className + '~' + property.Name))
                     {
-                        List<object> controls = _mappableControls[ClassName + '~' + property.Name];
-                        object value = property.GetValue(obj, null);
-                        SetControlsValue(controls, value);
+                        object control = _mappableControls[className + '~' + property.Name];
+                        object value = property.GetValue(obj);
+                        ((IBsMappable)control).SetValue(value);
                     }
                 }
                 else
@@ -143,13 +172,13 @@ namespace BigSoft.Framework.Controls
                 }
             }
 
-            foreach (FieldInfo Field in obj.GetType().GetFields())
+            foreach (FieldInfo field in obj.GetType().GetFields())
             {
-                if (_mappableControls.ContainsKey(ClassName + '~' + Field.Name))
+                if (_mappableControls.ContainsKey(className + '~' + field.Name))
                 {
-                    List<object> controls = _mappableControls[ClassName + '~' + Field.Name];
-                    object value = Field.GetValue(obj);
-                    SetControlsValue(controls, value);
+                    object control = _mappableControls[className + '~' + field.Name];
+                    object value = field.GetValue(obj);
+                    ((IBsMappable)control).SetValue(value);
                 }
             }
         }
@@ -159,84 +188,36 @@ namespace BigSoft.Framework.Controls
         /// properties.
         /// </summary>
         /// <param name="obj">Object that attributes will be set</param>
-        /// <param name="control">Container control that has mapped controls to obj's fields</param>
         /// <returns>Input object</returns>
         public object SetFromScreen(object obj)
         {
             if (obj == null)
                 return obj;
 
-            string ClassName = obj.GetType().Name;
+            string className = obj.GetType().Name;
 
             foreach (PropertyInfo property in obj.GetType().GetProperties())
             {
-                if (_mappableControls.ContainsKey(ClassName + '~' + property.Name))
+                if (_mappableControls.ContainsKey(className + '~' + property.Name))
                 {
-                    List<object> controls = _mappableControls[ClassName + '~' + property.Name];
-                    for (int i = 0; i < controls.Count; i++)
-                    {
-                        object controlValue = ((IBsMappable)Controls[i]).GetValue(property.PropertyType);
-                        property.SetValue(obj, controlValue, null);
-                    }
+                    object control = _mappableControls[className + '~' + property.Name];
+                    object controlValue = ((IBsMappable)control).GetValue(property.PropertyType);
+                    property.SetValue(obj, controlValue);
                 }
             }
 
-            foreach (FieldInfo Field in obj.GetType().GetFields())
+            foreach (FieldInfo field in obj.GetType().GetFields())
             {
-                if (_mappableControls.ContainsKey(ClassName + '~' + Field.Name))
+                if (_mappableControls.ContainsKey(className + '~' + field.Name))
                 {
-                    List<object> controls = _mappableControls[ClassName + '~' + Field.Name];
-                    for (int i = 0; i < controls.Count; i++)
-                    {
-                        object ControlValue = ((IBsMappable)Controls[i]).GetValue(Field.FieldType);
-                        Field.SetValue(obj, ControlValue);
-                    }
+                    object control = _mappableControls[className + '~' + field.Name];
+                    object controlValue = ((IBsMappable)control).GetValue(field.FieldType);
+                    field.SetValue(obj, controlValue);
                 }
             }
             return obj;
         }
 
         #endregion Public Methods
-
-        #region Protected Methods
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            CloseTab();
-            base.OnClosing(e);
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            BsStandartToolStrip toolStrip = Controls.OfType<BsStandartToolStrip>().FirstOrDefault();
-            List<TextBox> textBoxes = Controls.OfType<TextBox>().ToList();
-            switch (keyData)
-            {
-                case (Keys.Control | Keys.S):
-                    if (toolStrip.OkSaveButtonEnabled)
-                        toolStrip.TsbSave_Click_1(null, null);
-                    return true;
-
-                case Keys.Delete:
-                    if (textBoxes.Any(a => a.Focused))
-                    {
-                        return base.ProcessCmdKey(ref msg, keyData);
-                    }
-                    else if (toolStrip.OkDeleteButtonEnabled)
-                    {
-                        toolStrip.TsbDelete_Click_1(null, null);
-                        return true;
-                    }
-                    return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        #endregion Protected Methods
-
-        private void BsForm_Load(object sender, System.EventArgs e)
-        {
-            UpdateUI(this);
-        }
     }
 }

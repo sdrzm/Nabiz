@@ -1,15 +1,22 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 using Zuby.ADGV;
 
 namespace BigSoft.Framework.Controls
 {
+    [Designer(typeof(ControlDesigner))]
     public partial class BsAdvDataGridView : AdvancedDataGridView
     {
-        #region Public Constructors
+        #region Public Properties
 
         public DataGridViewRow CurrentGridRow { get; private set; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
 
         public BsAdvDataGridView()
         {
@@ -18,14 +25,14 @@ namespace BigSoft.Framework.Controls
 
         #endregion Public Constructors
 
-        #region Private Methods
+        #region Events
 
         private void BsAdvDataGridView_SelectionChanged(object sender, System.EventArgs e)
         {
             CurrentGridRow = ((DataGridView)sender).CurrentRow;
         }
 
-        #endregion Private Methods
+        #endregion Events
 
         #region Public Methods
 
@@ -36,7 +43,7 @@ namespace BigSoft.Framework.Controls
             foreach (var prop in obj.GetType().GetProperties())
             {
                 PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
-                propertyInfo.SetValue(obj, Convert.ChangeType(gridRow.Cells[prop.Name].Value, propertyInfo.PropertyType), null);
+                propertyInfo.SetValue(obj, Convert.ChangeType(gridRow.Cells[prop.Name].Value, propertyInfo.PropertyType));
             }
 
             return obj;

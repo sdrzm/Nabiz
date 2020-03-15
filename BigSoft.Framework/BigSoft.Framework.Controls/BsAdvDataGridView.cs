@@ -18,10 +18,7 @@ namespace BigSoft.Framework.Controls
 
         #region Public Constructors
 
-        public BsAdvDataGridView()
-        {
-            InitializeComponent();
-        }
+        public BsAdvDataGridView() => InitializeComponent();
 
         #endregion Public Constructors
 

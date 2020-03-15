@@ -5,12 +5,19 @@ namespace Nabiz.Business
 {
     public class OUserGet : BaseOperations<List<User>>
     {
+        #region Private Fields
+
         private readonly string _macAddress;
 
-        public OUserGet(string macAddress = "")
-        {
-            _macAddress = macAddress;
-        }
+        #endregion Private Fields
+
+        #region Public Constructors
+
+        public OUserGet(string macAddress = "") => _macAddress = macAddress;
+
+        #endregion Public Constructors
+
+        #region Protected Methods
 
         protected override void DoJob()
         {
@@ -22,21 +29,32 @@ namespace Nabiz.Business
 
             OperationResult.Value = BaseRepository.BsGetList<User>(query);
         }
+
+        #endregion Protected Methods
     }
 
     public class OUserSave : BaseOperationsDefault
     {
+        #region Private Fields
+
         private readonly string _macAddress;
 
-        public OUserSave(string macAddress)
-        {
-            _macAddress = macAddress;
-        }
+        #endregion Private Fields
+
+        #region Public Constructors
+
+        public OUserSave(string macAddress) => _macAddress = macAddress;
+
+        #endregion Public Constructors
+
+        #region Protected Methods
 
         protected override void DoJob()
         {
             const string query = "INSERT INTO User (MacAddress, LastUpdated) VALUES (@MacAddress, @LastUpdated)";
             BaseRepository.BsExecute(query, new { MacAddress = _macAddress, LastUpdated = 23 });
         }
+
+        #endregion Protected Methods
     }
 }

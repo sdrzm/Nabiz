@@ -30,10 +30,7 @@ namespace BigSoft.Framework.Controls
 
         #region Public Constructors
 
-        public BsTextBox()
-        {
-            InitializeComponent();
-        }
+        public BsTextBox() => InitializeComponent();
 
         public BsTextBox(IContainer container)
         {

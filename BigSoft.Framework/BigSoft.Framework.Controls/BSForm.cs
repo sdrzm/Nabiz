@@ -11,10 +11,7 @@ namespace BigSoft.Framework.Controls
     {
         #region Public Constructors
 
-        public BsForm()
-        {
-            InitializeComponent();
-        }
+        public BsForm() => InitializeComponent();
 
         #endregion Public Constructors
 

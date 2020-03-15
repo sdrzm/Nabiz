@@ -5,16 +5,19 @@ namespace BigSoft.Framework.Controls
 {
     public partial class BsListView : ListView
     {
-        public BsListView()
-        {
-            InitializeComponent();
-        }
+        #region Public Constructors
+
+        public BsListView() => InitializeComponent();
 
         public BsListView(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
         }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public void GenerateListView(int columnCount)
         {
@@ -31,5 +34,7 @@ namespace BigSoft.Framework.Controls
             }
             //Scrollable = false;
         }
+
+        #endregion Public Methods
     }
 }

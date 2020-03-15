@@ -9,10 +9,7 @@ namespace BigSoft.Framework.Controls
     {
         #region Public Constructors
 
-        public BsFormGrid()
-        {
-            InitializeComponent();
-        }
+        public BsFormGrid() => InitializeComponent();
 
         #endregion Public Constructors
 

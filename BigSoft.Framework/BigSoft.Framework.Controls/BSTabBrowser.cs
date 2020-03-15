@@ -16,10 +16,7 @@ namespace BigSoft.Framework.Controls
 
         #region Public Constructors
 
-        public BsTabBrowser()
-        {
-            InitializeComponent();
-        }
+        public BsTabBrowser() => InitializeComponent();
 
         #endregion Public Constructors
 

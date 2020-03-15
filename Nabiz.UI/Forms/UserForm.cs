@@ -10,10 +10,7 @@ namespace Nabiz.UI.Forms
     {
         #region Public Constructors
 
-        public UserForm()
-        {
-            InitializeComponent();
-        }
+        public UserForm() => InitializeComponent();
 
         #endregion Public Constructors
 

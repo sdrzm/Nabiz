@@ -7,17 +7,7 @@ namespace BigSoft.Framework.Controls
 {
     public sealed partial class BsStandartToolStrip : UserControl
     {
-        public event EventHandler OkGetButtonClicked;
-
-        public event EventHandler OkUpdateButtonClicked;
-
-        public event EventHandler OkDeleteButtonClicked;
-
-        public event EventHandler OkSaveButtonClicked;
-
-        public event EventHandler OkSearchButtonClicked;
-
-        public event EventHandler OkRefreshButtonClicked;
+        #region Public Constructors
 
         public BsStandartToolStrip()
         {
@@ -25,44 +15,25 @@ namespace BigSoft.Framework.Controls
             Dock = DockStyle.Top;
         }
 
-        private Control GetForm()
-        {
-            Control parent = Parent;
-            while (parent != null)
-            {
-                if (parent is Form)
-                    break;
-                parent = parent.Parent;
-            }
-            try
-            {
-                if (parent != null)
-                    return parent;
-            }
-            catch (Exception ex)
-            {
-                BsMessageBox.ShowError(ex.ToString());
-            }
-            return null;
-        }
+        #endregion Public Constructors
 
-        private void TsbGet_Click(object sender, EventArgs e)
-        {
-            if (tsbGet != null)
-                OkGetButtonClicked?.Invoke(sender, e);
-        }
+        #region Public Events
 
-        private void TsbExit_Click(object sender, EventArgs e)
-        {
-            Form parentForm = (Form)GetForm();
-            parentForm?.Close();
-        }
+        public event EventHandler OkDeleteButtonClicked;
 
-        private void TsbClear_Click_1(object sender, EventArgs e)
-        {
-            Control form = ((((ToolStripButton)sender).Owner).Parent).Parent;
-            ClearControls(form);
-        }
+        public event EventHandler OkGetButtonClicked;
+
+        public event EventHandler OkRefreshButtonClicked;
+
+        public event EventHandler OkSaveButtonClicked;
+
+        public event EventHandler OkSearchButtonClicked;
+
+        public event EventHandler OkUpdateButtonClicked;
+
+        #endregion Public Events
+
+        #region Private Methods
 
         private void ClearControls(Control form)
         {
@@ -115,14 +86,84 @@ namespace BigSoft.Framework.Controls
             tsbDelete.Enabled = false;
         }
 
-        public void TsbSave_Click_1(object sender, EventArgs e)
+        private Control GetForm()
         {
-            OkSaveButtonClicked?.Invoke(sender, e);
+            Control parent = Parent;
+            while (parent != null)
+            {
+                if (parent is Form)
+                    break;
+                parent = parent.Parent;
+            }
+            try
+            {
+                if (parent != null)
+                    return parent;
+            }
+            catch (Exception ex)
+            {
+                BsMessageBox.ShowError(ex.ToString());
+            }
+            return null;
+        }
+
+        private void TsbClear_Click_1(object sender, EventArgs e)
+        {
+            Control form = ((((ToolStripButton)sender).Owner).Parent).Parent;
+            ClearControls(form);
+        }
+
+        private void TsbExit_Click(object sender, EventArgs e)
+        {
+            Form parentForm = (Form)GetForm();
+            parentForm?.Close();
+        }
+
+        private void TsbGet_Click(object sender, EventArgs e)
+        {
+            if (tsbGet != null)
+                OkGetButtonClicked?.Invoke(sender, e);
+        }
+
+        private void TsbRefresh_Click(object sender, EventArgs e)
+        {
+            OkRefreshButtonClicked?.Invoke(sender, e);
+        }
+
+        private void TsbSearch_Click(object sender, EventArgs e)
+        {
+            OkSearchButtonClicked?.Invoke(sender, e);
         }
 
         private void TsbUpdate_Click_1(object sender, EventArgs e)
         {
             OkUpdateButtonClicked?.Invoke(sender, e);
+        }
+
+        #endregion Private Methods
+
+        #region Public Methods
+
+        public void DisableSave()
+        {
+            tsbSave.Enabled = false;
+        }
+
+        public void DisableUpdateDelete()
+        {
+            tsbUpdate.Enabled = false;
+            tsbDelete.Enabled = false;
+        }
+
+        public void EnableSave()
+        {
+            tsbSave.Enabled = true;
+        }
+
+        public void EnableUpdateDelete()
+        {
+            tsbUpdate.Enabled = true;
+            tsbDelete.Enabled = true;
         }
 
         public void TsbDelete_Click_1(object sender, EventArgs e)
@@ -132,72 +173,69 @@ namespace BigSoft.Framework.Controls
             OkDeleteButtonClicked?.Invoke(sender, e);
         }
 
-        private void TsbSearch_Click(object sender, EventArgs e)
+        public void TsbSave_Click_1(object sender, EventArgs e)
         {
-            OkSearchButtonClicked?.Invoke(sender, e);
+            OkSaveButtonClicked?.Invoke(sender, e);
         }
 
-        private void TsbRefresh_Click(object sender, EventArgs e)
-        {
-            OkRefreshButtonClicked?.Invoke(sender, e);
-        }
+        #endregion Public Methods
 
         #region Button Visible Status
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkGetButtonVisible
+        public bool OkClearButtonVisible
         {
-            get { return tsbGet.Visible; }
-            set { tsbGet.Visible = value; }
-        }
-
-        [Category("Visible")]
-        [DefaultValue(false)]
-        public bool OkSearchButtonVisible
-        {
-            get { return tsbSearch.Visible; }
-            set { tsbSearch.Visible = value; }
-        }
-
-        [Category("Visible")]
-        [DefaultValue(true)]
-        public bool OkSaveButtonVisible
-        {
-            get { return tsbSave.Visible; }
-            set { tsbSave.Visible = value; }
-        }
-
-        [Category("Visible")]
-        [DefaultValue(true)]
-        public bool OkUpdateButtonVisible
-        {
-            get { return tsbUpdate.Visible; }
-            set { tsbUpdate.Visible = value; }
+            get => tsbClear.Visible;
+            set => tsbClear.Visible = value;
         }
 
         [Category("Visible")]
         [DefaultValue(true)]
         public bool OkDeleteButtonVisible
         {
-            get { return tsbDelete.Visible; }
-            set { tsbDelete.Visible = value; }
+            get => tsbDelete.Visible;
+            set => tsbDelete.Visible = value;
         }
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkClearButtonVisible
+        public bool OkGetButtonVisible
         {
-            get { return tsbClear.Visible; }
-            set { tsbClear.Visible = value; }
+            get => tsbGet.Visible;
+            set => tsbGet.Visible = value;
         }
 
         [Category("Visible")]
         [DefaultValue(false)]
         public bool OkRefreshButtonVisible
         {
-            get { return tsbRefresh.Visible; }
-            set { tsbRefresh.Visible = value; }
+            get => tsbRefresh.Visible;
+            set => tsbRefresh.Visible = value;
+        }
+
+        [Category("Visible")]
+        [DefaultValue(true)]
+        public bool OkSaveButtonVisible
+        {
+            get => tsbSave.Visible;
+            set => tsbSave.Visible = value;
+        }
+
+        [Category("Visible")]
+        [DefaultValue(false)]
+        public bool OkSearchButtonVisible
+        {
+            get => tsbSearch.Visible;
+            set => tsbSearch.Visible = value;
+        }
+
+        [Category("Visible")]
+        [DefaultValue(true)]
+        public bool OkUpdateButtonVisible
+        {
+            get => tsbUpdate.Visible;
+            set => tsbUpdate.Visible = value;
         }
 
         #endregion Button Visible Status
@@ -206,74 +244,52 @@ namespace BigSoft.Framework.Controls
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkGetButtonEnabled
+        public bool OkClearButtonEnabled
         {
-            get { return tsbGet.Enabled; }
-            set { tsbGet.Enabled = value; }
-        }
-
-        [Category("Enabled")]
-        [DefaultValue(true)]
-        public bool OkSearchButtonEnabled
-        {
-            get { return tsbSearch.Enabled; }
-            set { tsbSearch.Enabled = value; }
-        }
-
-        [Category("Enabled")]
-        [DefaultValue(true)]
-        public bool OkSaveButtonEnabled
-        {
-            get { return tsbSave.Enabled; }
-            set { tsbSave.Enabled = value; }
-        }
-
-        [Category("Enabled")]
-        [DefaultValue(true)]
-        public bool OkUpdateButtonEnabled
-        {
-            get { return tsbUpdate.Enabled; }
-            set { tsbUpdate.Enabled = value; }
+            get => tsbClear.Enabled;
+            set => tsbClear.Enabled = value;
         }
 
         [Category("Enabled")]
         [DefaultValue(true)]
         public bool OkDeleteButtonEnabled
         {
-            get { return tsbDelete.Enabled; }
-            set { tsbDelete.Enabled = value; }
+            get => tsbDelete.Enabled;
+            set => tsbDelete.Enabled = value;
         }
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkClearButtonEnabled
+        public bool OkGetButtonEnabled
         {
-            get { return tsbClear.Enabled; }
-            set { tsbClear.Enabled = value; }
+            get => tsbGet.Enabled;
+            set => tsbGet.Enabled = value;
+        }
+
+        [Category("Enabled")]
+        [DefaultValue(true)]
+        public bool OkSaveButtonEnabled
+        {
+            get => tsbSave.Enabled;
+            set => tsbSave.Enabled = value;
+        }
+
+        [Category("Enabled")]
+        [DefaultValue(true)]
+        public bool OkSearchButtonEnabled
+        {
+            get => tsbSearch.Enabled;
+            set => tsbSearch.Enabled = value;
+        }
+
+        [Category("Enabled")]
+        [DefaultValue(true)]
+        public bool OkUpdateButtonEnabled
+        {
+            get => tsbUpdate.Enabled;
+            set => tsbUpdate.Enabled = value;
         }
 
         #endregion Button Enabled Status
-
-        public void EnableUpdateDelete()
-        {
-            tsbUpdate.Enabled = true;
-            tsbDelete.Enabled = true;
-        }
-
-        public void DisableUpdateDelete()
-        {
-            tsbUpdate.Enabled = false;
-            tsbDelete.Enabled = false;
-        }
-
-        public void DisableSave()
-        {
-            tsbSave.Enabled = false;
-        }
-
-        public void EnableSave()
-        {
-            tsbSave.Enabled = true;
-        }
     }
 }

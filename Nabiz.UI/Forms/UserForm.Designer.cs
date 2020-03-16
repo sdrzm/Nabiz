@@ -29,22 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bsTextBox1 = new BigSoft.Framework.Controls.BsTextBox(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMacAddress = new BigSoft.Framework.Controls.BsTextBox(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BsAdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsBindingSource)).BeginInit();
             this.BsPanelTop.SuspendLayout();
             this.BsPanelFill.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BsStandartToolStrip
-            // 
-            this.BsStandartToolStrip.OkClearButtonVisible = true;
-            this.BsStandartToolStrip.OkDeleteButtonVisible = true;
-            this.BsStandartToolStrip.OkGetButtonVisible = true;
-            this.BsStandartToolStrip.OkSaveButtonVisible = true;
-            this.BsStandartToolStrip.OkUpdateButtonVisible = true;
             // 
             // BsAdgv
             // 
@@ -57,31 +49,45 @@
             this.BsPanelTop.Controls.SetChildIndex(this.groupBox1, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.BsStandartToolStrip, 0);
             // 
-            // bsTextBox1
+            // BsStandartToolStrip
             // 
-            this.bsTextBox1.BsDataClassName = "User";
-            this.bsTextBox1.BsDataFieldName = "MacAddress";
-            this.bsTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bsTextBox1.Location = new System.Drawing.Point(3, 16);
-            this.bsTextBox1.Name = "bsTextBox1";
-            this.bsTextBox1.Size = new System.Drawing.Size(196, 20);
-            this.bsTextBox1.TabIndex = 3;
+            this.BsStandartToolStrip.BsClearButtonVisible = true;
+            this.BsStandartToolStrip.BsDeleteButtonEnabled = false;
+            this.BsStandartToolStrip.BsDeleteButtonVisible = true;
+            this.BsStandartToolStrip.BsGetButtonVisible = true;
+            this.BsStandartToolStrip.BsSaveButtonVisible = true;
+            this.BsStandartToolStrip.BsUpdateButtonVisible = true;
+            this.BsStandartToolStrip.BsGetButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsGetButtonClicked);
+            this.BsStandartToolStrip.BsSaveButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsSaveButtonClicked);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bsTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 36);
+            this.groupBox1.Controls.Add(this.txtMacAddress);
+            this.groupBox1.Location = new System.Drawing.Point(16, 44);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(202, 47);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(269, 58);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mac Address";
             // 
+            // txtMacAddress
+            // 
+            this.txtMacAddress.BsDataClassName = "User";
+            this.txtMacAddress.BsDataFieldName = "MacAddress";
+            this.txtMacAddress.BsValidatable = true;
+            this.txtMacAddress.Location = new System.Drawing.Point(7, 22);
+            this.txtMacAddress.Name = "txtMacAddress";
+            this.txtMacAddress.Size = new System.Drawing.Size(255, 22);
+            this.txtMacAddress.TabIndex = 5;
+            // 
             // UserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(1179, 567);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UserForm";
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
@@ -100,6 +106,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private BigSoft.Framework.Controls.BsTextBox bsTextBox1;
+        private BigSoft.Framework.Controls.BsTextBox txtMacAddress;
     }
 }

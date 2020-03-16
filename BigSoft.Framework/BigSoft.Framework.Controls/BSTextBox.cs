@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace BigSoft.Framework.Controls
 {
-    public partial class BsTextBox : TextBox, IBsMappable
+    public partial class BsTextBox : TextBox, IBsMappable, IBsValidatable
     {
         #region Public Properties
 
@@ -25,6 +25,9 @@ namespace BigSoft.Framework.Controls
 
         [Category("BsControls"), DefaultValue(false)]
         public bool ThousandSeparator { get; set; }
+
+        [Category("BsControls"), DefaultValue(false)]
+        public bool BsValidatable { get; set; }
 
         #endregion Public Properties
 
@@ -94,6 +97,21 @@ namespace BigSoft.Framework.Controls
             {
                 Text = (string)value;
             }
+        }
+
+        public bool IsValueValid()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ClearErrorProvider()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetErrorProvider()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion Public Methods

@@ -16,6 +16,13 @@ namespace Nabiz.UI.Forms
 
         #region Events
 
+        private void BsStandartToolStrip_BsGetButtonClicked(object sender, EventArgs e)
+        {
+            OUserGet get = new OUserGet(txtMacAddress.Text);
+            var result = get.Execute();
+            BindDataAsList(result.Value);
+        }
+
         private void BsAdgv_SelectionChanged(object sender, EventArgs e)
         {
             FillScreen(BsAdgv.DataRowToObject<User>(BsAdgv.CurrentGridRow));
@@ -36,5 +43,15 @@ namespace Nabiz.UI.Forms
         }
 
         #endregion Events
+
+        #region Private Methods
+
+        private void BsStandartToolStrip_BsSaveButtonClicked(object sender, EventArgs e)
+
+        {
+            System.Windows.Forms.MessageBox.Show("Test");
+        }
+
+        #endregion Private Methods
     }
 }

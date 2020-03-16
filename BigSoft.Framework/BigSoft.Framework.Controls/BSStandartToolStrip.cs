@@ -95,9 +95,13 @@ namespace BigSoft.Framework.Controls
             return null;
         }
 
-        private void TsbClear_Click_1(object sender, EventArgs e)
+        #endregion Private Methods
+
+        #region Events
+
+        private void TsbClear_Click(object sender, EventArgs e)
         {
-            Control form = ((((ToolStripButton)sender).Owner).Parent).Parent;
+            Control form = ((ToolStripButton)sender).Owner.Parent.Parent;
             ClearControls(form);
         }
 
@@ -109,8 +113,7 @@ namespace BigSoft.Framework.Controls
 
         private void TsbGet_Click(object sender, EventArgs e)
         {
-            if (tsbGet != null)
-                BsGetButtonClicked?.Invoke(sender, e);
+            BsGetButtonClicked?.Invoke(sender, e);
         }
 
         private void TsbRefresh_Click(object sender, EventArgs e)
@@ -123,12 +126,24 @@ namespace BigSoft.Framework.Controls
             BsSearchButtonClicked?.Invoke(sender, e);
         }
 
-        private void TsbUpdate_Click_1(object sender, EventArgs e)
+        private void TsbUpdate_Click(object sender, EventArgs e)
         {
             BsUpdateButtonClicked?.Invoke(sender, e);
         }
 
-        #endregion Private Methods
+        public void TsbSave_Click(object sender, EventArgs e)
+        {
+            BsSaveButtonClicked?.Invoke(sender, e);
+        }
+
+        public void TsbDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = BsMessageBox.Ask("Silmek istediğinize emin misiniz?");
+            if (result == DialogResult.No) return;
+            BsDeleteButtonClicked?.Invoke(sender, e);
+        }
+
+        #endregion Events
 
         #region Public Methods
 
@@ -154,25 +169,13 @@ namespace BigSoft.Framework.Controls
             tsbDelete.Enabled = true;
         }
 
-        public void TsbDelete_Click_1(object sender, EventArgs e)
-        {
-            DialogResult result = BsMessageBox.Ask("Silmek istediğinize emin misiniz?");
-            if (result == DialogResult.No) return;
-            BsDeleteButtonClicked?.Invoke(sender, e);
-        }
-
-        public void TsbSave_Click_1(object sender, EventArgs e)
-        {
-            BsSaveButtonClicked?.Invoke(sender, e);
-        }
-
         #endregion Public Methods
 
         #region Button Visible Status
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkClearButtonVisible
+        public bool BsClearButtonVisible
         {
             get => tsbClear.Visible;
             set => tsbClear.Visible = value;
@@ -180,7 +183,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkDeleteButtonVisible
+        public bool BsDeleteButtonVisible
         {
             get => tsbDelete.Visible;
             set => tsbDelete.Visible = value;
@@ -188,7 +191,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkGetButtonVisible
+        public bool BsGetButtonVisible
         {
             get => tsbGet.Visible;
             set => tsbGet.Visible = value;
@@ -196,7 +199,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(false)]
-        public bool OkRefreshButtonVisible
+        public bool BsRefreshButtonVisible
         {
             get => tsbRefresh.Visible;
             set => tsbRefresh.Visible = value;
@@ -204,7 +207,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkSaveButtonVisible
+        public bool BsSaveButtonVisible
         {
             get => tsbSave.Visible;
             set => tsbSave.Visible = value;
@@ -212,7 +215,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(false)]
-        public bool OkSearchButtonVisible
+        public bool BsSearchButtonVisible
         {
             get => tsbSearch.Visible;
             set => tsbSearch.Visible = value;
@@ -220,7 +223,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Visible")]
         [DefaultValue(true)]
-        public bool OkUpdateButtonVisible
+        public bool BsUpdateButtonVisible
         {
             get => tsbUpdate.Visible;
             set => tsbUpdate.Visible = value;
@@ -232,15 +235,15 @@ namespace BigSoft.Framework.Controls
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkClearButtonEnabled
+        public bool BsClearButtonEnabled
         {
             get => tsbClear.Enabled;
             set => tsbClear.Enabled = value;
         }
 
         [Category("Enabled")]
-        [DefaultValue(true)]
-        public bool OkDeleteButtonEnabled
+        [DefaultValue(false)]
+        public bool BsDeleteButtonEnabled
         {
             get => tsbDelete.Enabled;
             set => tsbDelete.Enabled = value;
@@ -248,15 +251,15 @@ namespace BigSoft.Framework.Controls
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkGetButtonEnabled
+        public bool BsGetButtonEnabled
         {
             get => tsbGet.Enabled;
             set => tsbGet.Enabled = value;
         }
 
         [Category("Enabled")]
-        [DefaultValue(true)]
-        public bool OkSaveButtonEnabled
+        [DefaultValue(false)]
+        public bool BsSaveButtonEnabled
         {
             get => tsbSave.Enabled;
             set => tsbSave.Enabled = value;
@@ -264,7 +267,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkSearchButtonEnabled
+        public bool BsSearchButtonEnabled
         {
             get => tsbSearch.Enabled;
             set => tsbSearch.Enabled = value;
@@ -272,7 +275,7 @@ namespace BigSoft.Framework.Controls
 
         [Category("Enabled")]
         [DefaultValue(true)]
-        public bool OkUpdateButtonEnabled
+        public bool BsUpdateButtonEnabled
         {
             get => tsbUpdate.Enabled;
             set => tsbUpdate.Enabled = value;

@@ -1,12 +1,21 @@
-﻿using FastMember;
+﻿using BigSoft.Framework.Util;
+using FastMember;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace BigSoft.Framework.Controls
 {
     public partial class BsFormGrid : BsForm
     {
+        #region Public Properties
+
+        public BsOpResultBase OpResult { get; set; } = new BsOpResultBase();
+
+        #endregion Public Properties
+
         #region Public Constructors
 
         public BsFormGrid() => InitializeComponent();
@@ -45,5 +54,36 @@ namespace BigSoft.Framework.Controls
         }
 
         #endregion Public Methods
+
+        private void CheckValidation(Control control)
+        {
+            foreach (Control childControl in control.Controls)
+            {
+                if (childControl is IBsValidatable cctrl && cctrl.BsValidatable && cctrl is TextBox box)
+                {
+                    if (string.IsNullOrEmpty(box.Text))
+                    {
+                        box.BackColor = Color.MistyRose;
+                        OpResult.IsSuccessful = Success.UserError;
+                        OpResult.Message = "Gerekli alanları doldurun";
+                        BsMessageBox.Show(OpResult);
+                    }
+                    else
+                    {
+                        box.BackColor = Color.White;
+                    }
+                }
+
+                if (childControl.HasChildren)
+                {
+                    CheckValidation(childControl);
+                }
+            }
+        }
+
+        private void BsStandartToolStrip_BsSaveButtonClicked(object sender, System.EventArgs e)
+        {
+            CheckValidation(this);
+        }
     }
 }

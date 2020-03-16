@@ -34,32 +34,6 @@ namespace BigSoft.Framework.Controls
             base.OnClosing(e);
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            BsStandartToolStrip toolStrip = Controls.OfType<BsStandartToolStrip>().FirstOrDefault();
-            List<TextBox> textBoxes = Controls.OfType<TextBox>().ToList();
-            switch (keyData)
-            {
-                case (Keys.Control | Keys.S):
-                    if (toolStrip.OkSaveButtonEnabled)
-                        toolStrip.TsbSave_Click_1(null, null);
-                    return true;
-
-                case Keys.Delete:
-                    if (textBoxes.Any(a => a.Focused))
-                    {
-                        return base.ProcessCmdKey(ref msg, keyData);
-                    }
-                    else if (toolStrip.OkDeleteButtonEnabled)
-                    {
-                        toolStrip.TsbDelete_Click_1(null, null);
-                        return true;
-                    }
-                    return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
         #endregion Events
 
         #region Private Methods
@@ -77,9 +51,7 @@ namespace BigSoft.Framework.Controls
         private void InitializeComponent()
         {
             SuspendLayout();
-            //
             // BsForm
-            //
             ClientSize = new System.Drawing.Size(884, 461);
             Name = "BsForm";
             Load += BsForm_Load;
@@ -109,8 +81,8 @@ namespace BigSoft.Framework.Controls
         #region Public Methods
 
         /// <summary>
-        /// Sets screens control values using the object. Objects fields matches with controls BsDataClassName and
-        /// BsDataFieldName
+        /// Sets screens control values using the object. Objects fields matches with controls
+        /// BsDataClassName and BsDataFieldName
         /// </summary>
         /// <param name="obj">Source object that will fill screen</param>
         public void FillScreen(object obj)
@@ -149,8 +121,8 @@ namespace BigSoft.Framework.Controls
         }
 
         /// <summary>
-        /// Set an objects attributes. Values are taken from screen controls which has BsDataClassName and BsDataFieldName
-        /// properties.
+        /// Set an objects attributes. Values are taken from screen controls which has
+        /// BsDataClassName and BsDataFieldName properties.
         /// </summary>
         /// <param name="obj">Object that attributes will be set</param>
         /// <returns>Input object</returns>

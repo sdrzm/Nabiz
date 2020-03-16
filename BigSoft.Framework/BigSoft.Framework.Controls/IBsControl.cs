@@ -19,4 +19,23 @@ namespace BigSoft.Framework.Controls
 
         #endregion Public Methods
     }
+
+    public interface IBsValidatable
+    {
+        #region Public Properties
+
+        bool BsValidatable { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Methods
+
+        bool IsValueValid();
+
+        void ClearErrorProvider();
+
+        void SetErrorProvider();
+
+        #endregion Public Methods
+    }
 }

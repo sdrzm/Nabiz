@@ -88,7 +88,7 @@
             this.tsbSave.Name = "tsbSave";
             this.tsbSave.Size = new System.Drawing.Size(71, 28);
             this.tsbSave.Text = "Kaydet";
-            this.tsbSave.Click += new System.EventHandler(this.TsbSave_Click_1);
+            this.tsbSave.Click += new System.EventHandler(this.TsbSave_Click);
             // 
             // tsbUpdate
             // 
@@ -98,7 +98,7 @@
             this.tsbUpdate.Name = "tsbUpdate";
             this.tsbUpdate.Size = new System.Drawing.Size(81, 28);
             this.tsbUpdate.Text = "Güncelle";
-            this.tsbUpdate.Click += new System.EventHandler(this.TsbUpdate_Click_1);
+            this.tsbUpdate.Click += new System.EventHandler(this.TsbUpdate_Click);
             // 
             // tsbDelete
             // 
@@ -108,7 +108,7 @@
             this.tsbDelete.Name = "tsbDelete";
             this.tsbDelete.Size = new System.Drawing.Size(47, 28);
             this.tsbDelete.Text = "Sil";
-            this.tsbDelete.Click += new System.EventHandler(this.TsbDelete_Click_1);
+            this.tsbDelete.Click += new System.EventHandler(this.TsbDelete_Click);
             // 
             // tsbClear
             // 
@@ -118,7 +118,7 @@
             this.tsbClear.Name = "tsbClear";
             this.tsbClear.Size = new System.Drawing.Size(76, 28);
             this.tsbClear.Text = "Temizle";
-            this.tsbClear.Click += new System.EventHandler(this.TsbClear_Click_1);
+            this.tsbClear.Click += new System.EventHandler(this.TsbClear_Click);
             // 
             // tsbExit
             // 

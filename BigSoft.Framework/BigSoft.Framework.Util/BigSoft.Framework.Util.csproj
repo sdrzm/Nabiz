@@ -54,7 +54,6 @@
   <ItemGroup>
     <Compile Include="BSCommon.cs" />
     <Compile Include="BSException.cs" />
-    <Compile Include="BsMessageBox.cs" />
     <Compile Include="BsOpResult.cs" />
     <Compile Include="BsTrace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

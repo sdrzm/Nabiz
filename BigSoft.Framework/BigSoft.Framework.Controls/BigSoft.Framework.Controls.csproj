@@ -73,6 +73,7 @@
     <Compile Include="BSListView.Designer.cs">
       <DependentUpon>BSListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BsMessageBox.cs" />
     <Compile Include="BSStandartToolStrip.cs">
       <SubType>UserControl</SubType>
     </Compile>

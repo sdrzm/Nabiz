@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BigSoft.Framework.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -9,17 +11,23 @@ namespace BigSoft.Framework.Controls
 {
     public class BsForm : Form
     {
-        #region Public Constructors
-
-        public BsForm() => InitializeComponent();
-
-        #endregion Public Constructors
-
         #region Private Fields
 
         protected readonly Dictionary<string, object> _mappableControls = new Dictionary<string, object>();
 
         #endregion Private Fields
+
+        #region Public Properties
+
+        public BsOpResultBase OpResult { get; set; } = new BsOpResultBase();
+
+        #endregion Public Properties
+
+        #region Public Constructors
+
+        public BsForm() => InitializeComponent();
+
+        #endregion Public Constructors
 
         #region Events
 
@@ -77,6 +85,36 @@ namespace BigSoft.Framework.Controls
         }
 
         #endregion Private Methods
+
+        #region Protected Methods
+
+        protected void CheckValidation(Control control)
+        {
+            foreach (Control childControl in control.Controls)
+            {
+                if (childControl is IBsValidatable cctrl && cctrl.BsValidatable && cctrl is TextBox box)
+                {
+                    if (string.IsNullOrEmpty(box.Text))
+                    {
+                        box.BackColor = Color.MistyRose;
+                        OpResult.IsSuccessful = Success.UserError;
+                        OpResult.Message = "Gerekli alanları doldurun";
+                        BsMessageBox.Show(OpResult);
+                    }
+                    else
+                    {
+                        box.BackColor = Color.White;
+                    }
+                }
+
+                if (childControl.HasChildren)
+                {
+                    CheckValidation(childControl);
+                }
+            }
+        }
+
+        #endregion Protected Methods
 
         #region Public Methods
 

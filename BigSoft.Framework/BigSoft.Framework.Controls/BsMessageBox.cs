@@ -1,9 +1,12 @@
-﻿using System.Windows.Forms;
+﻿using BigSoft.Framework.Util;
+using System.Windows.Forms;
 
-namespace BigSoft.Framework.Util
+namespace BigSoft.Framework.Controls
 {
     public static class BsMessageBox
     {
+        #region Public Methods
+
         public static void Show(BsOpResultBase result)
         {
             switch (result.IsSuccessful)
@@ -36,5 +39,7 @@ namespace BigSoft.Framework.Util
         {
             return MessageBox.Show(message, "Emin misiniz?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
+
+        #endregion Public Methods
     }
 }

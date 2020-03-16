@@ -114,3 +114,11 @@
 2020-03-17 01:13:38|INFO|Caller Method: UserForm_Load, Line: 41
 2020-03-17 01:16:33|INFO|Caller Method: UserForm_Load, Line: 41
 2020-03-17 01:17:51|INFO|Caller Method: UserForm_Load, Line: 41
+2020-03-17 01:28:25|INFO|Caller Method: UserForm_Load, Line: 41
+2020-03-17 01:29:03|INFO|Caller Method: BsStandartToolStrip_BsGetButtonClicked, Line: 22
+2020-03-17 01:29:08|INFO|Caller Method: BsStandartToolStrip_BsGetButtonClicked, Line: 22
+2020-03-17 01:29:24|INFO|Caller Method: BsStandartToolStrip_BsGetButtonClicked, Line: 22
+2020-03-17 01:30:01|INFO|Caller Method: BsStandartToolStrip_BsGetButtonClicked, Line: 22
+2020-03-17 01:30:08|INFO|Caller Method: BsStandartToolStrip_BsGetButtonClicked, Line: 22
+2020-03-17 01:35:22|INFO|Caller Method: UserForm_Load, Line: 41
+2020-03-17 01:37:44|INFO|Caller Method: UserForm_Load, Line: 41

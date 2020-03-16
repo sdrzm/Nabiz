@@ -1,5 +1,4 @@
-﻿using BigSoft.Framework.Util;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -68,6 +67,10 @@ namespace BigSoft.Framework.Controls
                 {
                     ClearControls(panel);
                 }
+                else if (control is BsAdvDataGridView adgv)
+                {
+                    adgv.CleanFilterAndSort();
+                }
             }
 
             tsbUpdate.Enabled = false;
@@ -101,7 +104,7 @@ namespace BigSoft.Framework.Controls
 
         private void TsbClear_Click(object sender, EventArgs e)
         {
-            Control form = ((ToolStripButton)sender).Owner.Parent.Parent;
+            Control form = ((ToolStripButton)sender).Owner.Parent.Parent.Parent;
             ClearControls(form);
         }
 

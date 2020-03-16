@@ -99,21 +99,6 @@ namespace BigSoft.Framework.Controls
             }
         }
 
-        public bool IsValueValid()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ClearErrorProvider()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetErrorProvider()
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion Public Methods
     }
 }

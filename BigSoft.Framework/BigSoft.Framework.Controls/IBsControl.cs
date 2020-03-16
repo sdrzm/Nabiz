@@ -27,15 +27,5 @@ namespace BigSoft.Framework.Controls
         bool BsValidatable { get; set; }
 
         #endregion Public Properties
-
-        #region Public Methods
-
-        bool IsValueValid();
-
-        void ClearErrorProvider();
-
-        void SetErrorProvider();
-
-        #endregion Public Methods
     }
 }

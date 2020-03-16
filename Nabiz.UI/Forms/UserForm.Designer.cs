@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bsTextBox1 = new BigSoft.Framework.Controls.BsTextBox(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.BsAdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsBindingSource)).BeginInit();
             this.BsPanelTop.SuspendLayout();
             this.BsPanelFill.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BsStandartToolStrip
@@ -51,18 +53,29 @@
             // 
             // BsPanelTop
             // 
-            this.BsPanelTop.Controls.Add(this.bsTextBox1);
+            this.BsPanelTop.Controls.Add(this.groupBox1);
+            this.BsPanelTop.Controls.SetChildIndex(this.groupBox1, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.BsStandartToolStrip, 0);
-            this.BsPanelTop.Controls.SetChildIndex(this.bsTextBox1, 0);
             // 
             // bsTextBox1
             // 
             this.bsTextBox1.BsDataClassName = "User";
             this.bsTextBox1.BsDataFieldName = "MacAddress";
-            this.bsTextBox1.Location = new System.Drawing.Point(13, 37);
+            this.bsTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bsTextBox1.Location = new System.Drawing.Point(3, 16);
             this.bsTextBox1.Name = "bsTextBox1";
-            this.bsTextBox1.Size = new System.Drawing.Size(456, 20);
+            this.bsTextBox1.Size = new System.Drawing.Size(196, 20);
             this.bsTextBox1.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bsTextBox1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(202, 47);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mac Address";
             // 
             // UserForm
             // 
@@ -77,6 +90,8 @@
             this.BsPanelTop.ResumeLayout(false);
             this.BsPanelTop.PerformLayout();
             this.BsPanelFill.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,6 +99,7 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
         private BigSoft.Framework.Controls.BsTextBox bsTextBox1;
     }
 }

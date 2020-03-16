@@ -19,17 +19,17 @@ namespace BigSoft.Framework.Controls
 
         #region Public Events
 
-        public event EventHandler OkDeleteButtonClicked;
+        public event EventHandler BsDeleteButtonClicked;
 
-        public event EventHandler OkGetButtonClicked;
+        public event EventHandler BsGetButtonClicked;
 
-        public event EventHandler OkRefreshButtonClicked;
+        public event EventHandler BsRefreshButtonClicked;
 
-        public event EventHandler OkSaveButtonClicked;
+        public event EventHandler BsSaveButtonClicked;
 
-        public event EventHandler OkSearchButtonClicked;
+        public event EventHandler BsSearchButtonClicked;
 
-        public event EventHandler OkUpdateButtonClicked;
+        public event EventHandler BsUpdateButtonClicked;
 
         #endregion Public Events
 
@@ -37,48 +37,36 @@ namespace BigSoft.Framework.Controls
 
         private void ClearControls(Control form)
         {
-            foreach (Control c in form.Controls)
+            foreach (Control control in form.Controls)
             {
-                if (c.GetType() == typeof(TextBox))
+                if (control is TextBox box)
                 {
-                    ((TextBox)c).Clear();
+                    box.Clear();
                 }
-                else if (c.GetType() == typeof(CheckBox))
+                else if (control is CheckBox check)
                 {
-                    ((CheckBox)c).Checked = false;
+                    check.Checked = false;
                 }
-                else if (c.GetType() == typeof(ComboBox))
+                else if (control is ComboBox cbox)
                 {
-                    ((ComboBox)c).SelectedIndex = -1;
-                    ((ComboBox)c).Text = "";
+                    cbox.SelectedIndex = -1;
+                    cbox.Text = "";
                 }
-                else if (c.GetType() == typeof(ListBox))
+                else if (control is ListBox lbox)
                 {
-                    ((ListBox)c).Items.Clear();
+                    lbox.Items.Clear();
                 }
-                else if (c.GetType() == typeof(ListView))
+                else if (control is ListView lview)
                 {
-                    ((ListView)c).Items.Clear();
+                    lview.Items.Clear();
                 }
-                else if (c.GetType() == typeof(BsListView))
+                else if (control is GroupBox gbox)
                 {
-                    if (!(c is BsListView okListView)) continue;
-                    for (int i = 0; i < okListView.SelectedIndices.Count; i++)
-                    {
-                        okListView.Items[okListView.SelectedIndices[i]].Selected = false;
-                    }
+                    ClearControls(gbox);
                 }
-                else if (c.GetType() == typeof(RadioButton))
+                else if (control is Panel panel)
                 {
-                    ((RadioButton)c).Checked = false;
-                }
-                else if (c.GetType() == typeof(GroupBox))
-                {
-                    ClearControls(c);
-                }
-                else if (c.GetType() == typeof(Panel))
-                {
-                    ClearControls(c);
+                    ClearControls(panel);
                 }
             }
 
@@ -122,22 +110,22 @@ namespace BigSoft.Framework.Controls
         private void TsbGet_Click(object sender, EventArgs e)
         {
             if (tsbGet != null)
-                OkGetButtonClicked?.Invoke(sender, e);
+                BsGetButtonClicked?.Invoke(sender, e);
         }
 
         private void TsbRefresh_Click(object sender, EventArgs e)
         {
-            OkRefreshButtonClicked?.Invoke(sender, e);
+            BsRefreshButtonClicked?.Invoke(sender, e);
         }
 
         private void TsbSearch_Click(object sender, EventArgs e)
         {
-            OkSearchButtonClicked?.Invoke(sender, e);
+            BsSearchButtonClicked?.Invoke(sender, e);
         }
 
         private void TsbUpdate_Click_1(object sender, EventArgs e)
         {
-            OkUpdateButtonClicked?.Invoke(sender, e);
+            BsUpdateButtonClicked?.Invoke(sender, e);
         }
 
         #endregion Private Methods
@@ -170,12 +158,12 @@ namespace BigSoft.Framework.Controls
         {
             DialogResult result = BsMessageBox.Ask("Silmek istediğinize emin misiniz?");
             if (result == DialogResult.No) return;
-            OkDeleteButtonClicked?.Invoke(sender, e);
+            BsDeleteButtonClicked?.Invoke(sender, e);
         }
 
         public void TsbSave_Click_1(object sender, EventArgs e)
         {
-            OkSaveButtonClicked?.Invoke(sender, e);
+            BsSaveButtonClicked?.Invoke(sender, e);
         }
 
         #endregion Public Methods

@@ -34,9 +34,9 @@
             this.BsToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.BsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BsPanelTop = new System.Windows.Forms.Panel();
+            this.BsStandartToolStrip = new BigSoft.Framework.Controls.BsStandartToolStrip();
             this.BsPanelFill = new System.Windows.Forms.Panel();
             this.BsAdgv = new BigSoft.Framework.Controls.BsAdvDataGridView();
-            this.BsStandartToolStrip = new BigSoft.Framework.Controls.BsStandartToolStrip();
             this.BsStatusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BsBindingSource)).BeginInit();
             this.BsPanelTop.SuspendLayout();
@@ -73,6 +73,16 @@
             this.BsPanelTop.Size = new System.Drawing.Size(884, 173);
             this.BsPanelTop.TabIndex = 4;
             // 
+            // BsStandartToolStrip
+            // 
+            this.BsStandartToolStrip.AutoSize = true;
+            this.BsStandartToolStrip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BsStandartToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.BsStandartToolStrip.Margin = new System.Windows.Forms.Padding(2);
+            this.BsStandartToolStrip.Name = "BsStandartToolStrip";
+            this.BsStandartToolStrip.Size = new System.Drawing.Size(884, 31);
+            this.BsStandartToolStrip.TabIndex = 2;
+            // 
             // BsPanelFill
             // 
             this.BsPanelFill.Controls.Add(this.BsAdgv);
@@ -102,16 +112,6 @@
             this.BsAdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BsAdgv.Size = new System.Drawing.Size(884, 266);
             this.BsAdgv.TabIndex = 1;
-            // 
-            // BsStandartToolStrip
-            // 
-            this.BsStandartToolStrip.AutoSize = true;
-            this.BsStandartToolStrip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BsStandartToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.BsStandartToolStrip.Margin = new System.Windows.Forms.Padding(2);
-            this.BsStandartToolStrip.Name = "BsStandartToolStrip";
-            this.BsStandartToolStrip.Size = new System.Drawing.Size(884, 31);
-            this.BsStandartToolStrip.TabIndex = 2;
             // 
             // BsFormGrid
             // 

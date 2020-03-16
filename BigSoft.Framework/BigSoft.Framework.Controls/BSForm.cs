@@ -109,38 +109,6 @@ namespace BigSoft.Framework.Controls
         #region Public Methods
 
         /// <summary>
-        /// Clear all controls in form
-        /// </summary>
-        public static void Clear(Control container)
-        {
-            foreach (Control control in container.Controls)
-            {
-                if (control is TextBox box)
-                {
-                    box.Clear();
-                }
-                if (control is MaskedTextBox mbox)
-                {
-                    mbox.Clear();
-                }
-                if (control is ListView view)
-                {
-                    view.Items.Clear();
-                }
-                if (control is GroupBox gbox)
-                {
-                    foreach (Control control1 in gbox.Controls)
-                    {
-                        if (control1 is TextBox box1)
-                        {
-                            box1.Clear();
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
         /// Sets screens control values using the object. Objects fields matches with controls BsDataClassName and
         /// BsDataFieldName
         /// </summary>

@@ -1,5 +1,4 @@
 ﻿using BigSoft.Framework.Controls;
-using BigSoft.Framework.Util;
 using Nabiz.Business;
 using Nabiz.Data.Model;
 using System;
@@ -18,14 +17,18 @@ namespace Nabiz.UI.Forms
 
         private void BsStandartToolStrip_BsGetButtonClicked(object sender, EventArgs e)
         {
-            OUserGet get = new OUserGet(txtMacAddress.Text);
-            var result = get.Execute();
-            BindDataAsList(result.Value);
+            GetFromReady();
+        }
+
+        private void BsStandartToolStrip_BsSaveButtonClicked(object sender, EventArgs e)
+        {
+            User obj = new User();
+            SetFromScreen(obj);
         }
 
         private void BsAdgv_SelectionChanged(object sender, EventArgs e)
         {
-            FillScreen(BsAdgv.DataRowToObject<User>(BsAdgv.CurrentGridRow));
+            FillScreen(DataRowToObject<User>(BsAdgv.SelectedRows));
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -37,19 +40,18 @@ namespace Nabiz.UI.Forms
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            OUserGet get = new OUserGet();
-            var result = get.Execute();
-            BindDataAsList(result.Value);
+            GetFromReady();
         }
 
         #endregion Events
 
         #region Private Methods
 
-        private void BsStandartToolStrip_BsSaveButtonClicked(object sender, EventArgs e)
-
+        private void GetFromReady()
         {
-            System.Windows.Forms.MessageBox.Show("Test");
+            OUserGet get = new OUserGet(txtMacAddress.Text);
+            var result = get.Execute();
+            BindDataAsList(result.Value);
         }
 
         #endregion Private Methods

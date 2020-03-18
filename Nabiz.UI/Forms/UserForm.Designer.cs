@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMacAddress = new BigSoft.Framework.Controls.BsTextBox(this.components);
+            this.bsAdvDataGridView1 = new BigSoft.Framework.Controls.BsAdvDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.BsAdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsBindingSource)).BeginInit();
             this.BsPanelTop.SuspendLayout();
             this.BsPanelFill.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAdvDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // BsAdgv
@@ -45,9 +48,11 @@
             // 
             // BsPanelTop
             // 
+            this.BsPanelTop.Controls.Add(this.bsAdvDataGridView1);
             this.BsPanelTop.Controls.Add(this.groupBox1);
             this.BsPanelTop.Controls.SetChildIndex(this.groupBox1, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.BsStandartToolStrip, 0);
+            this.BsPanelTop.Controls.SetChildIndex(this.bsAdvDataGridView1, 0);
             // 
             // BsStandartToolStrip
             // 
@@ -82,6 +87,27 @@
             this.txtMacAddress.Size = new System.Drawing.Size(255, 22);
             this.txtMacAddress.TabIndex = 5;
             // 
+            // bsAdvDataGridView1
+            // 
+            this.bsAdvDataGridView1.AllowUserToAddRows = false;
+            this.bsAdvDataGridView1.AllowUserToDeleteRows = false;
+            this.bsAdvDataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bsAdvDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bsAdvDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bsAdvDataGridView1.ColumnHeadersHeight = 29;
+            this.bsAdvDataGridView1.FilterAndSortEnabled = true;
+            this.bsAdvDataGridView1.Location = new System.Drawing.Point(583, 12);
+            this.bsAdvDataGridView1.MultiSelect = false;
+            this.bsAdvDataGridView1.Name = "bsAdvDataGridView1";
+            this.bsAdvDataGridView1.ReadOnly = true;
+            this.bsAdvDataGridView1.RowHeadersVisible = false;
+            this.bsAdvDataGridView1.RowHeadersWidth = 51;
+            this.bsAdvDataGridView1.RowTemplate.Height = 20;
+            this.bsAdvDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bsAdvDataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.bsAdvDataGridView1.TabIndex = 5;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -98,6 +124,7 @@
             this.BsPanelFill.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAdvDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +134,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private BigSoft.Framework.Controls.BsTextBox txtMacAddress;
+        private BigSoft.Framework.Controls.BsAdvDataGridView bsAdvDataGridView1;
     }
 }

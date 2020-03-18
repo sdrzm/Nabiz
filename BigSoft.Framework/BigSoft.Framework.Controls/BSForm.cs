@@ -119,7 +119,7 @@ namespace BigSoft.Framework.Controls
         #region Public Methods
 
         /// <summary>
-        /// Sets screens control values using the object. Objects fields matches with controls
+        /// Sets screen control values using the object. Objects fields matches with controls
         /// BsDataClassName and BsDataFieldName
         /// </summary>
         /// <param name="obj">Source object that will fill screen</param>
@@ -159,19 +159,19 @@ namespace BigSoft.Framework.Controls
         }
 
         /// <summary>
-        /// Set an objects attributes. Values are taken from screen controls which has
+        /// Set an object attributes. Values are taken from screen controls which has
         /// BsDataClassName and BsDataFieldName properties.
         /// </summary>
         /// <param name="obj">Object that attributes will be set</param>
         /// <returns>Input object</returns>
-        public object SetFromScreen(object obj)
+        public object SetFromScreen<T>(T obj)
         {
             if (obj == null)
                 return obj;
 
-            string className = obj.GetType().Name;
+            string className = typeof(T).Name;
 
-            foreach (PropertyInfo property in obj.GetType().GetProperties())
+            foreach (PropertyInfo property in typeof(T).GetProperties())
             {
                 if (_mappableControls.ContainsKey(className + '~' + property.Name))
                 {
@@ -181,7 +181,7 @@ namespace BigSoft.Framework.Controls
                 }
             }
 
-            foreach (FieldInfo field in obj.GetType().GetFields())
+            foreach (FieldInfo field in typeof(T).GetFields())
             {
                 if (_mappableControls.ContainsKey(className + '~' + field.Name))
                 {
@@ -191,6 +191,46 @@ namespace BigSoft.Framework.Controls
                 }
             }
             return obj;
+        }
+
+        public void ClearControls(Control form)
+        {
+            foreach (Control control in form.Controls)
+            {
+                if (control is TextBox box)
+                {
+                    box.Clear();
+                }
+                else if (control is CheckBox check)
+                {
+                    check.Checked = false;
+                }
+                else if (control is ComboBox cbox)
+                {
+                    cbox.SelectedIndex = -1;
+                    cbox.Text = "";
+                }
+                else if (control is ListBox lbox)
+                {
+                    lbox.Items.Clear();
+                }
+                else if (control is ListView lview)
+                {
+                    lview.Items.Clear();
+                }
+                else if (control is GroupBox gbox)
+                {
+                    ClearControls(gbox);
+                }
+                else if (control is Panel panel)
+                {
+                    ClearControls(panel);
+                }
+                else if (control is BsAdvDataGridView adgv)
+                {
+                    adgv.CleanFilterAndSort();
+                }
+            }
         }
 
         #endregion Public Methods

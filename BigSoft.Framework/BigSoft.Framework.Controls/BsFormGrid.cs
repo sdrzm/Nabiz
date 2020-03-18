@@ -1,7 +1,10 @@
 ﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace BigSoft.Framework.Controls
 {
@@ -47,6 +50,25 @@ namespace BigSoft.Framework.Controls
         {
             BsBindingSource.DataSource = ConvertToDatatable(list);
             BsAdgv.DataSource = BsBindingSource;
+        }
+
+        public T DataRowToObject<T>(DataGridViewSelectedRowCollection selectedRows) where T : class, new()
+        {
+            if (selectedRows.Count == 0)
+            {
+                ClearControls(this);
+                return null;
+            }
+
+            T obj = new T();
+
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+                PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
+                propertyInfo.SetValue(obj, Convert.ChangeType(selectedRows[0].Cells[prop.Name].Value, propertyInfo.PropertyType));
+            }
+
+            return obj;
         }
 
         #endregion Public Methods

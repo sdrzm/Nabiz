@@ -46,7 +46,6 @@
             this.RowTemplate.Height = 20;
             this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.BsAdvDataGridView_DataBindingComplete);
-            this.SelectionChanged += new System.EventHandler(this.BsAdvDataGridView_SelectionChanged);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

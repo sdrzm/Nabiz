@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMacAddress = new BigSoft.Framework.Controls.BsTextBox(this.components);
-            this.bsAdvDataGridView1 = new BigSoft.Framework.Controls.BsAdvDataGridView();
+            this.btnMacAddress = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BsAdgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BsBindingSource)).BeginInit();
             this.BsPanelTop.SuspendLayout();
             this.BsPanelFill.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAdvDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // BsAdgv
@@ -48,11 +46,11 @@
             // 
             // BsPanelTop
             // 
-            this.BsPanelTop.Controls.Add(this.bsAdvDataGridView1);
+            this.BsPanelTop.Controls.Add(this.btnMacAddress);
             this.BsPanelTop.Controls.Add(this.groupBox1);
             this.BsPanelTop.Controls.SetChildIndex(this.groupBox1, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.BsStandartToolStrip, 0);
-            this.BsPanelTop.Controls.SetChildIndex(this.bsAdvDataGridView1, 0);
+            this.BsPanelTop.Controls.SetChildIndex(this.btnMacAddress, 0);
             // 
             // BsStandartToolStrip
             // 
@@ -68,11 +66,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtMacAddress);
-            this.groupBox1.Location = new System.Drawing.Point(16, 44);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(269, 58);
+            this.groupBox1.Size = new System.Drawing.Size(284, 47);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mac Address";
@@ -82,38 +78,29 @@
             this.txtMacAddress.BsDataClassName = "User";
             this.txtMacAddress.BsDataFieldName = "MacAddress";
             this.txtMacAddress.BsValidatable = true;
-            this.txtMacAddress.Location = new System.Drawing.Point(7, 22);
+            this.txtMacAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMacAddress.Location = new System.Drawing.Point(3, 16);
+            this.txtMacAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtMacAddress.Name = "txtMacAddress";
-            this.txtMacAddress.Size = new System.Drawing.Size(255, 22);
+            this.txtMacAddress.Size = new System.Drawing.Size(278, 20);
             this.txtMacAddress.TabIndex = 5;
             // 
-            // bsAdvDataGridView1
+            // btnMacAddress
             // 
-            this.bsAdvDataGridView1.AllowUserToAddRows = false;
-            this.bsAdvDataGridView1.AllowUserToDeleteRows = false;
-            this.bsAdvDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.bsAdvDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bsAdvDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bsAdvDataGridView1.ColumnHeadersHeight = 29;
-            this.bsAdvDataGridView1.FilterAndSortEnabled = true;
-            this.bsAdvDataGridView1.Location = new System.Drawing.Point(583, 12);
-            this.bsAdvDataGridView1.MultiSelect = false;
-            this.bsAdvDataGridView1.Name = "bsAdvDataGridView1";
-            this.bsAdvDataGridView1.ReadOnly = true;
-            this.bsAdvDataGridView1.RowHeadersVisible = false;
-            this.bsAdvDataGridView1.RowHeadersWidth = 51;
-            this.bsAdvDataGridView1.RowTemplate.Height = 20;
-            this.bsAdvDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bsAdvDataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.bsAdvDataGridView1.TabIndex = 5;
+            this.btnMacAddress.Location = new System.Drawing.Point(302, 49);
+            this.btnMacAddress.Name = "btnMacAddress";
+            this.btnMacAddress.Size = new System.Drawing.Size(75, 23);
+            this.btnMacAddress.TabIndex = 5;
+            this.btnMacAddress.Text = "Generate";
+            this.btnMacAddress.UseVisualStyleBackColor = true;
+            this.btnMacAddress.Click += new System.EventHandler(this.BtnMacAddress_Click);
             // 
             // UserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 567);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserForm";
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
@@ -124,7 +111,6 @@
             this.BsPanelFill.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAdvDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +120,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private BigSoft.Framework.Controls.BsTextBox txtMacAddress;
-        private BigSoft.Framework.Controls.BsAdvDataGridView bsAdvDataGridView1;
+        private System.Windows.Forms.Button btnMacAddress;
     }
 }

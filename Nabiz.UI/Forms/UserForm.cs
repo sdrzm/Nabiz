@@ -1,4 +1,5 @@
 ﻿using BigSoft.Framework.Controls;
+using BigSoft.Framework.Util;
 using Nabiz.Business;
 using Nabiz.Data.Model;
 using System;
@@ -22,8 +23,19 @@ namespace Nabiz.UI.Forms
 
         private void BsStandartToolStrip_BsSaveButtonClicked(object sender, EventArgs e)
         {
-            User obj = new User();
-            SetFromScreen(obj);
+            if (OpResult.IsSuccessful != Success.Successful)
+                return;
+
+            User obj = SetFromScreen<User>();
+            OUserSave save = new OUserSave(obj);
+            var result = save.Execute();
+            BsMessageBox.Show(result);
+            GetFromReady();
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            GetFromReady();
         }
 
         private void BsAdgv_SelectionChanged(object sender, EventArgs e)
@@ -31,16 +43,9 @@ namespace Nabiz.UI.Forms
             FillScreen(DataRowToObject<User>(BsAdgv.SelectedRows));
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnMacAddress_Click(object sender, EventArgs e)
         {
-            OUserSave save = new OUserSave(Guid.NewGuid().ToString());
-            var result = save.Execute();
-            BsMessageBox.Show(result);
-        }
-
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-            GetFromReady();
+            txtMacAddress.Text = Guid.NewGuid().ToString();
         }
 
         #endregion Events
@@ -49,6 +54,7 @@ namespace Nabiz.UI.Forms
 
         private void GetFromReady()
         {
+            ClearControls();
             OUserGet get = new OUserGet(txtMacAddress.Text);
             var result = get.Execute();
             BindDataAsList(result.Value);

@@ -35,15 +35,15 @@ namespace Nabiz.Business
 
     public class OUserSave : BaseOperationsDefault
     {
-        #region Private Fields
+        #region Fields
 
-        private readonly string _macAddress;
+        private readonly User _obj;
 
-        #endregion Private Fields
+        #endregion Fields
 
         #region Public Constructors
 
-        public OUserSave(string macAddress) => _macAddress = macAddress;
+        public OUserSave(User obj) => _obj = obj;
 
         #endregion Public Constructors
 
@@ -52,7 +52,7 @@ namespace Nabiz.Business
         protected override void DoJob()
         {
             const string query = "INSERT INTO User (MacAddress, LastUpdated) VALUES (@MacAddress, @LastUpdated)";
-            BaseRepository.BsExecute(query, new { MacAddress = _macAddress, LastUpdated = 23 });
+            BaseRepository.BsExecute(query, new { _obj.MacAddress, LastUpdated = 23 });
         }
 
         #endregion Protected Methods

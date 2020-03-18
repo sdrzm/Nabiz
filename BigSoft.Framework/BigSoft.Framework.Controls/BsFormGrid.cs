@@ -56,7 +56,6 @@ namespace BigSoft.Framework.Controls
         {
             if (selectedRows.Count == 0)
             {
-                ClearControls(this);
                 return null;
             }
 

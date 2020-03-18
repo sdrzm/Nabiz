@@ -104,6 +104,7 @@ namespace BigSoft.Framework.Controls
                     else
                     {
                         box.BackColor = Color.White;
+                        OpResult.IsSuccessful = Success.Successful;
                     }
                 }
 
@@ -126,7 +127,10 @@ namespace BigSoft.Framework.Controls
         public void FillScreen(object obj)
         {
             if (obj == null || obj is Array)
+            {
+                ClearControls(this);
                 return;
+            }
 
             string className = obj.GetType().Name;
 
@@ -164,11 +168,9 @@ namespace BigSoft.Framework.Controls
         /// </summary>
         /// <param name="obj">Object that attributes will be set</param>
         /// <returns>Input object</returns>
-        public object SetFromScreen<T>(T obj)
+        public T SetFromScreen<T>()
         {
-            if (obj == null)
-                return obj;
-
+            T obj = (T)Activator.CreateInstance(typeof(T));
             string className = typeof(T).Name;
 
             foreach (PropertyInfo property in typeof(T).GetProperties())
@@ -231,6 +233,11 @@ namespace BigSoft.Framework.Controls
                     adgv.CleanFilterAndSort();
                 }
             }
+        }
+
+        public void ClearControls()
+        {
+            ClearControls(this);
         }
 
         #endregion Public Methods

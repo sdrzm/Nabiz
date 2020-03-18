@@ -34,48 +34,48 @@ namespace BigSoft.Framework.Controls
 
         #region Private Methods
 
-        private void ClearControls(Control form)
-        {
-            foreach (Control control in form.Controls)
-            {
-                if (control is TextBox box)
-                {
-                    box.Clear();
-                }
-                else if (control is CheckBox check)
-                {
-                    check.Checked = false;
-                }
-                else if (control is ComboBox cbox)
-                {
-                    cbox.SelectedIndex = -1;
-                    cbox.Text = "";
-                }
-                else if (control is ListBox lbox)
-                {
-                    lbox.Items.Clear();
-                }
-                else if (control is ListView lview)
-                {
-                    lview.Items.Clear();
-                }
-                else if (control is GroupBox gbox)
-                {
-                    ClearControls(gbox);
-                }
-                else if (control is Panel panel)
-                {
-                    ClearControls(panel);
-                }
-                else if (control is BsAdvDataGridView adgv)
-                {
-                    adgv.CleanFilterAndSort();
-                }
-            }
+        //private void ClearControls(Control form)
+        //{
+        //    foreach (Control control in form.Controls)
+        //    {
+        //        if (control is TextBox box)
+        //        {
+        //            box.Clear();
+        //        }
+        //        else if (control is CheckBox check)
+        //        {
+        //            check.Checked = false;
+        //        }
+        //        else if (control is ComboBox cbox)
+        //        {
+        //            cbox.SelectedIndex = -1;
+        //            cbox.Text = "";
+        //        }
+        //        else if (control is ListBox lbox)
+        //        {
+        //            lbox.Items.Clear();
+        //        }
+        //        else if (control is ListView lview)
+        //        {
+        //            lview.Items.Clear();
+        //        }
+        //        else if (control is GroupBox gbox)
+        //        {
+        //            ClearControls(gbox);
+        //        }
+        //        else if (control is Panel panel)
+        //        {
+        //            ClearControls(panel);
+        //        }
+        //        else if (control is BsAdvDataGridView adgv)
+        //        {
+        //            adgv.CleanFilterAndSort();
+        //        }
+        //    }
 
-            tsbUpdate.Enabled = false;
-            tsbDelete.Enabled = false;
-        }
+        //    tsbUpdate.Enabled = false;
+        //    tsbDelete.Enabled = false;
+        //}
 
         private Control GetForm()
         {
@@ -104,8 +104,9 @@ namespace BigSoft.Framework.Controls
 
         private void TsbClear_Click(object sender, EventArgs e)
         {
-            Control form = ((ToolStripButton)sender).Owner.Parent.Parent.Parent;
-            ClearControls(form);
+            //Control form = ((ToolStripButton)sender).Owner.Parent.Parent.Parent;
+            BsForm bsForm = (BsForm)Parent.Parent;
+            bsForm.ClearControls();
         }
 
         private void TsbExit_Click(object sender, EventArgs e)

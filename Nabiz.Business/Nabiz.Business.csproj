@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseOperations.cs" />
+    <Compile Include="BaseOperation.cs" />
     <Compile Include="OUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

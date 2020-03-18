@@ -1,60 +1,52 @@
-﻿using Nabiz.Data.Model;
+﻿using BigSoft.Framework.Util;
+using Nabiz.Data;
+using Nabiz.Data.Model;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
 
 namespace Nabiz.Business
 {
-    public class OUserGet : BaseOperations<List<User>>
+    public static class OUser
     {
-        #region Private Fields
+        public static void CheckExitence(User obj, SQLiteConnection cnn)
+        {
+            if (string.IsNullOrEmpty(obj.MacAddress))
+                throw new BsException("Boş girilemez");
 
+            UserRepository repo = new UserRepository(cnn);
+            List<User> list = repo.GetUsers(obj.MacAddress);
+
+            if (list.Any(i => i.MacAddress == obj.MacAddress))
+                throw new BsException("Zaten mevcut kayıt");
+        }
+    }
+
+    public class OUserGet : BaseOperation<List<User>>
+    {
         private readonly string _macAddress;
-
-        #endregion Private Fields
-
-        #region Public Constructors
 
         public OUserGet(string macAddress = "") => _macAddress = macAddress;
 
-        #endregion Public Constructors
-
-        #region Protected Methods
-
         protected override void DoJob()
         {
-            string query;
-            if (string.IsNullOrEmpty(_macAddress))
-                query = "SELECT * FROM User";
-            else
-                query = string.Format("SELECT * FROM User WHERE MacAddress = '{0}'", _macAddress);
-
-            OperationResult.Value = BaseRepository.BsGetList<User>(query);
+            UserRepository repo = new UserRepository(BsConnection);
+            BsOpResult.Value = repo.GetUsers(_macAddress);
         }
-
-        #endregion Protected Methods
     }
 
-    public class OUserSave : BaseOperationsDefault
+    public class OUserSave : BaseOperationDefault
     {
-        #region Fields
-
         private readonly User _obj;
-
-        #endregion Fields
-
-        #region Public Constructors
 
         public OUserSave(User obj) => _obj = obj;
 
-        #endregion Public Constructors
-
-        #region Protected Methods
-
         protected override void DoJob()
         {
-            const string query = "INSERT INTO User (MacAddress, LastUpdated) VALUES (@MacAddress, @LastUpdated)";
-            BaseRepository.BsExecute(query, new { _obj.MacAddress, LastUpdated = 23 });
-        }
+            OUser.CheckExitence(_obj, BsConnection);
 
-        #endregion Protected Methods
+            const string query = "INSERT INTO User (MacAddress, LastUpdated) VALUES (@MacAddress, @LastUpdated)";
+            BsRepository.BsExecute(query, new { _obj.MacAddress, LastUpdated = 23 });
+        }
     }
 }

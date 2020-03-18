@@ -16,7 +16,7 @@ namespace BigSoft.Framework.Util
                     if (string.IsNullOrEmpty(control.Text))
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.IsSuccessful = Success.UserError;
+                        result.ResultType = ResultType.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else
@@ -31,7 +31,7 @@ namespace BigSoft.Framework.Util
                     if (lstView.SelectedItems.Count == 0)
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.IsSuccessful = Success.UserError;
+                        result.ResultType = ResultType.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else
@@ -46,7 +46,7 @@ namespace BigSoft.Framework.Util
                     if (comboBox.SelectedIndex == -1)
                     {
                         control.BackColor = Color.AntiqueWhite;
-                        result.IsSuccessful = Success.UserError;
+                        result.ResultType = ResultType.UserError;
                         result.Message = "Gerekli alanları doldurun.";
                     }
                     else

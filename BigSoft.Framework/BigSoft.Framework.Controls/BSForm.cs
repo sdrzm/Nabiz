@@ -97,14 +97,14 @@ namespace BigSoft.Framework.Controls
                     if (string.IsNullOrEmpty(box.Text))
                     {
                         box.BackColor = Color.MistyRose;
-                        OpResult.IsSuccessful = Success.UserError;
+                        OpResult.ResultType = ResultType.UserError;
                         OpResult.Message = "Gerekli alanları doldurun";
                         BsMessageBox.Show(OpResult);
                     }
                     else
                     {
                         box.BackColor = Color.White;
-                        OpResult.IsSuccessful = Success.Successful;
+                        OpResult.ResultType = ResultType.Successful;
                     }
                 }
 

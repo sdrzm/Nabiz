@@ -9,17 +9,17 @@ namespace BigSoft.Framework.Controls
 
         public static void Show(BsOpResultBase result)
         {
-            switch (result.IsSuccessful)
+            switch (result.ResultType)
             {
-                case Success.Successful:
+                case ResultType.Successful:
                     MessageBox.Show(result.Message, "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
-                case Success.UserError:
+                case ResultType.UserError:
                     MessageBox.Show(result.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
-                case Success.SystemError:
+                case ResultType.SystemError:
                     MessageBox.Show(result.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }

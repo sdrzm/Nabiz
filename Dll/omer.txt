@@ -209,3 +209,71 @@ UNIQUE constraint failed: User.MacAddress
 2020-03-18 18:46:29|INFO|Caller Method: GetFromReady, Line: 59
 2020-03-18 18:46:34|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
 2020-03-18 18:46:35|INFO|Caller Method: GetFromReady, Line: 59
+2020-03-18 21:59:38|INFO|Caller Method: GetFromReady, Line: 59
+2020-03-18 22:00:34|INFO|Caller Method: GetFromReady, Line: 59
+2020-03-18 23:15:05|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:11|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:27|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:29|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:32|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:32|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:15:53|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:15:54|ERROR|BsException
+2020-03-18 23:15:57|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:20:51|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:22:00|ERROR|BsException
+2020-03-18 23:23:34|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:23:53|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:24:26|ERROR|BsException
+2020-03-18 23:24:54|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:27:22|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:27:26|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:27:26|ERROR|deneme
+2020-03-18 23:27:28|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:27:43|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:27:43|ERROR|deneme
+2020-03-18 23:27:44|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:27:53|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:32:06|ERROR|deneme
+2020-03-18 23:32:15|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:33:24|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:33:28|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:33:41|ERROR|BsException
+2020-03-18 23:33:43|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:33:46|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:46:04|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:46:08|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:46:10|ERROR|Zaten mevcut kayýt
+2020-03-18 23:46:14|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:49:14|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:49:19|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:52:17|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:52:21|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:52:23|ERROR|BigSoft.Framework.Util.BsException: Zaten mevcut kayýt
+   at Nabiz.Business.OUser.CheckExitence(User obj, SQLiteConnection cnn) in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 21
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 46
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 30
+2020-03-18 23:52:25|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:55:40|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:55:44|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 31
+2020-03-18 23:55:46|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayýt
+   at Nabiz.Business.OUser.CheckExitence(User obj, SQLiteConnection cnn) in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 21
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 46
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\okoca\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 30
+2020-03-18 23:55:48|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:57:43|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:57:48|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:59:48|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-18 23:59:59|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:01:21|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:01:52|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:02:14|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:02:25|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:03:06|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:04:22|INFO|Caller Method: GetFromReady, Line: 60
+2020-03-19 00:06:09|INFO|Caller Method: GetFromReady, Line: 56
+2020-03-19 00:06:17|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-19 00:06:19|INFO|Caller Method: GetFromReady, Line: 56
+2020-03-19 00:06:59|INFO|Caller Method: GetFromReady, Line: 54
+2020-03-19 00:07:05|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-19 00:07:06|INFO|Caller Method: GetFromReady, Line: 54

@@ -12,8 +12,9 @@ namespace BigSoft.Framework.Util
             logger.Info(message);
         }
 
-        public static void LogException(Exception ex, string message)
+        public static void LogException(Exception ex, ResultType resultType)
         {
+            string message = string.Format("{0} | {1}", resultType.ToString(), ex.ToString());
             logger.Error(ex, message);
         }
     }

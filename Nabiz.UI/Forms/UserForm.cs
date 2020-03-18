@@ -8,11 +8,7 @@ namespace Nabiz.UI.Forms
 {
     public partial class UserForm : BsFormGrid
     {
-        #region Public Constructors
-
         public UserForm() => InitializeComponent();
-
-        #endregion Public Constructors
 
         #region Events
 
@@ -23,13 +19,14 @@ namespace Nabiz.UI.Forms
 
         private void BsStandartToolStrip_BsSaveButtonClicked(object sender, EventArgs e)
         {
-            if (OpResult.IsSuccessful != Success.Successful)
+            if (OpResult.ResultType != ResultType.Successful)
                 return;
 
             User obj = SetFromScreen<User>();
             OUserSave save = new OUserSave(obj);
             var result = save.Execute();
             BsMessageBox.Show(result);
+            ClearControls();
             GetFromReady();
         }
 
@@ -50,16 +47,11 @@ namespace Nabiz.UI.Forms
 
         #endregion Events
 
-        #region Private Methods
-
         private void GetFromReady()
         {
-            ClearControls();
             OUserGet get = new OUserGet(txtMacAddress.Text);
             var result = get.Execute();
             BindDataAsList(result.Value);
         }
-
-        #endregion Private Methods
     }
 }

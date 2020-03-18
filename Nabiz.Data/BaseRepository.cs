@@ -7,24 +7,16 @@ namespace Nabiz.Data
 {
     public class BaseRepository
     {
-        #region Protected Fields
-
         //Türeyen sınıflar kullanacak
-        protected readonly SQLiteConnection BaseConnection;
-
-        #endregion Protected Fields
-
-        #region Public Constructors
+        public readonly SQLiteConnection BaseConnection;
 
         //Türeyen sınıflardan BaseOperation'da üretilen connection geliyor.
-        public BaseRepository(SQLiteConnection cnn) => BaseConnection = cnn;
+        protected BaseRepository(SQLiteConnection cnn) => BaseConnection = cnn;
 
-        #endregion Public Constructors
-
-        #region Public Methods
+        public BaseRepository() => BaseConnection = SimpleDbConnection();
 
         /// <returns>Returns a new connection.</returns>
-        public static SQLiteConnection SimpleDbConnection()
+        private static SQLiteConnection SimpleDbConnection()
         {
             string dbFile = Environment.CurrentDirectory + "\\NabizDb.sqlite";
             return new SQLiteConnection("Data Source=" + dbFile);
@@ -38,20 +30,11 @@ namespace Nabiz.Data
             return BaseConnection.Execute(query, param);
         }
 
-        public void BsExecuteWithDefaultParameters(string query, object param = null)
-        {
-            //Foreign Key constrait activation.
-            BaseConnection.Execute("PRAGMA foreign_keys = ON;");
-            BaseConnection.Execute(query, param);
-        }
-
         public List<T> BsGetList<T>(string query, object param = null)
         {
             //Foreign Key constrait activation.
             BaseConnection.Execute("PRAGMA foreign_keys = ON;");
             return BaseConnection.Query<T>(query, param).AsList();
         }
-
-        #endregion Public Methods
     }
 }

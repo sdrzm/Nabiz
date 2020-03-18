@@ -2,7 +2,7 @@
 
 namespace BigSoft.Framework.Util
 {
-    public enum Success
+    public enum ResultType
     {
         Successful,
         UserError,
@@ -12,8 +12,7 @@ namespace BigSoft.Framework.Util
     public class BsOpResultBase
     {
         public string Message { get; set; }
-        public Success IsSuccessful { get; set; }
-        public Exception Exception { get; set; }
+        public ResultType ResultType { get; set; }
     }
 
     public class BsOpResult<T> : BsOpResultBase

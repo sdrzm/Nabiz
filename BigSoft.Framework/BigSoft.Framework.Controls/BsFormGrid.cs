@@ -10,11 +10,7 @@ namespace BigSoft.Framework.Controls
 {
     public partial class BsFormGrid : BsForm
     {
-        #region Public Constructors
-
         public BsFormGrid() => InitializeComponent();
-
-        #endregion Public Constructors
 
         #region Events
 
@@ -30,8 +26,6 @@ namespace BigSoft.Framework.Controls
 
         #endregion Events
 
-        #region Private Methods
-
         private static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)
         {
             DataTable table = new DataTable();
@@ -42,10 +36,6 @@ namespace BigSoft.Framework.Controls
             return table;
         }
 
-        #endregion Private Methods
-
-        #region Public Methods
-
         public void BindDataAsList<T>(IEnumerable<T> list)
         {
             BsBindingSource.DataSource = ConvertToDatatable(list);
@@ -55,9 +45,7 @@ namespace BigSoft.Framework.Controls
         public T DataRowToObject<T>(DataGridViewSelectedRowCollection selectedRows) where T : class, new()
         {
             if (selectedRows.Count == 0)
-            {
                 return null;
-            }
 
             T obj = new T();
 
@@ -69,7 +57,5 @@ namespace BigSoft.Framework.Controls
 
             return obj;
         }
-
-        #endregion Public Methods
     }
 }

@@ -44,7 +44,6 @@
             this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.OkDataGridView_CellFormatting);
             this.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.BindingComplete);
-            this.SelectionChanged += new System.EventHandler(this.OkDataGridView_SelectionChanged);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

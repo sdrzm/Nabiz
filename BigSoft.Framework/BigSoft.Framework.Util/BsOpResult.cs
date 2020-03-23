@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BigSoft.Framework.Util
+﻿namespace BigSoft.Framework.Util
 {
     public enum ResultType
     {

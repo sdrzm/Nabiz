@@ -11,23 +11,11 @@ namespace BigSoft.Framework.Controls
 {
     public class BsForm : Form
     {
-        #region Private Fields
-
         protected readonly Dictionary<string, object> _mappableControls = new Dictionary<string, object>();
-
-        #endregion Private Fields
-
-        #region Public Properties
 
         public BsOpResultBase OpResult { get; set; } = new BsOpResultBase();
 
-        #endregion Public Properties
-
-        #region Public Constructors
-
         public BsForm() => InitializeComponent();
-
-        #endregion Public Constructors
 
         #region Events
 
@@ -60,7 +48,7 @@ namespace BigSoft.Framework.Controls
         {
             SuspendLayout();
             // BsForm
-            ClientSize = new System.Drawing.Size(884, 461);
+            ClientSize = new Size(884, 461);
             Name = "BsForm";
             Load += BsForm_Load;
             ResumeLayout(false);
@@ -86,8 +74,6 @@ namespace BigSoft.Framework.Controls
 
         #endregion Private Methods
 
-        #region Protected Methods
-
         protected void CheckValidation(Control control)
         {
             foreach (Control childControl in control.Controls)
@@ -104,7 +90,6 @@ namespace BigSoft.Framework.Controls
                     else
                     {
                         box.BackColor = Color.White;
-                        OpResult.ResultType = ResultType.Successful;
                     }
                 }
 
@@ -115,20 +100,11 @@ namespace BigSoft.Framework.Controls
             }
         }
 
-        #endregion Protected Methods
-
-        #region Public Methods
-
-        /// <summary>
-        /// Sets screen control values using the object. Objects fields matches with controls
-        /// BsDataClassName and BsDataFieldName
-        /// </summary>
-        /// <param name="obj">Source object that will fill screen</param>
         public void FillScreen(object obj)
         {
             if (obj == null || obj is Array)
             {
-                ClearControls(this);
+                ClearControls(false);
                 return;
             }
 
@@ -162,18 +138,12 @@ namespace BigSoft.Framework.Controls
             }
         }
 
-        /// <summary>
-        /// Set an object attributes. Values are taken from screen controls which has
-        /// BsDataClassName and BsDataFieldName properties.
-        /// </summary>
-        /// <param name="obj">Object that attributes will be set</param>
-        /// <returns>Input object</returns>
         public T SetFromScreen<T>()
         {
             T obj = (T)Activator.CreateInstance(typeof(T));
-            string className = typeof(T).Name;
+            string className = obj.GetType().Name;
 
-            foreach (PropertyInfo property in typeof(T).GetProperties())
+            foreach (PropertyInfo property in obj.GetType().GetProperties())
             {
                 if (_mappableControls.ContainsKey(className + '~' + property.Name))
                 {
@@ -183,7 +153,7 @@ namespace BigSoft.Framework.Controls
                 }
             }
 
-            foreach (FieldInfo field in typeof(T).GetFields())
+            foreach (FieldInfo field in obj.GetType().GetFields())
             {
                 if (_mappableControls.ContainsKey(className + '~' + field.Name))
                 {
@@ -195,7 +165,9 @@ namespace BigSoft.Framework.Controls
             return obj;
         }
 
-        public void ClearControls(Control form)
+        #region ClearControls
+
+        private void ClearControls(Control form, bool adgv)
         {
             foreach (Control control in form.Controls)
             {
@@ -222,24 +194,25 @@ namespace BigSoft.Framework.Controls
                 }
                 else if (control is GroupBox gbox)
                 {
-                    ClearControls(gbox);
+                    ClearControls(gbox, adgv);
                 }
                 else if (control is Panel panel)
                 {
-                    ClearControls(panel);
+                    ClearControls(panel, adgv);
                 }
-                else if (control is BsAdvDataGridView adgv)
+                else if (control is BsAdvDataGridView adg && adgv)
                 {
-                    adgv.CleanFilterAndSort();
+                    adg.CleanFilterAndSort();
+                    adg.ClearSelection();
                 }
             }
         }
 
-        public void ClearControls()
+        public void ClearControls(bool adgv = true)
         {
-            ClearControls(this);
+            ClearControls(this, adgv);
         }
 
-        #endregion Public Methods
+        #endregion ClearControls
     }
 }

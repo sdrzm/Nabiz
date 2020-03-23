@@ -6,17 +6,11 @@ namespace BigSoft.Framework.Controls
 {
     public sealed partial class BsStandartToolStrip : UserControl
     {
-        #region Public Constructors
-
         public BsStandartToolStrip()
         {
             InitializeComponent();
             Dock = DockStyle.Top;
         }
-
-        #endregion Public Constructors
-
-        #region Public Events
 
         public event EventHandler BsDeleteButtonClicked;
 
@@ -29,53 +23,6 @@ namespace BigSoft.Framework.Controls
         public event EventHandler BsSearchButtonClicked;
 
         public event EventHandler BsUpdateButtonClicked;
-
-        #endregion Public Events
-
-        #region Private Methods
-
-        //private void ClearControls(Control form)
-        //{
-        //    foreach (Control control in form.Controls)
-        //    {
-        //        if (control is TextBox box)
-        //        {
-        //            box.Clear();
-        //        }
-        //        else if (control is CheckBox check)
-        //        {
-        //            check.Checked = false;
-        //        }
-        //        else if (control is ComboBox cbox)
-        //        {
-        //            cbox.SelectedIndex = -1;
-        //            cbox.Text = "";
-        //        }
-        //        else if (control is ListBox lbox)
-        //        {
-        //            lbox.Items.Clear();
-        //        }
-        //        else if (control is ListView lview)
-        //        {
-        //            lview.Items.Clear();
-        //        }
-        //        else if (control is GroupBox gbox)
-        //        {
-        //            ClearControls(gbox);
-        //        }
-        //        else if (control is Panel panel)
-        //        {
-        //            ClearControls(panel);
-        //        }
-        //        else if (control is BsAdvDataGridView adgv)
-        //        {
-        //            adgv.CleanFilterAndSort();
-        //        }
-        //    }
-
-        //    tsbUpdate.Enabled = false;
-        //    tsbDelete.Enabled = false;
-        //}
 
         private Control GetForm()
         {
@@ -98,15 +45,12 @@ namespace BigSoft.Framework.Controls
             return null;
         }
 
-        #endregion Private Methods
-
         #region Events
 
         private void TsbClear_Click(object sender, EventArgs e)
         {
-            //Control form = ((ToolStripButton)sender).Owner.Parent.Parent.Parent;
             BsForm bsForm = (BsForm)Parent.Parent;
-            bsForm.ClearControls();
+            bsForm.ClearControls(true);
         }
 
         private void TsbExit_Click(object sender, EventArgs e)

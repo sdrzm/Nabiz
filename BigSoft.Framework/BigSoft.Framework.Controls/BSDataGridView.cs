@@ -12,21 +12,11 @@ namespace BigSoft.Framework.Controls
 {
     public partial class BsDataGridView : DataGridView
     {
-        #region Public Properties
-
-        public DataGridViewRow CurrentGridRow { get; set; }
-
-        #endregion Public Properties
-
-        #region Public Constructors
-
         public BsDataGridView(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
         }
-
-        #endregion Public Constructors
 
         #region Private Methods
 
@@ -65,11 +55,6 @@ namespace BigSoft.Framework.Controls
             {
                 row.DefaultCellStyle.BackColor = (bool)row.Cells["IsGreenVf"].Value ? Color.Green : Color.Red;
             }
-        }
-
-        private void OkDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            CurrentGridRow = ((DataGridView)sender).CurrentRow;
         }
 
         #endregion Private Methods

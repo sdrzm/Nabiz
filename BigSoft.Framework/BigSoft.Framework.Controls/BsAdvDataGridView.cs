@@ -10,13 +10,7 @@ namespace BigSoft.Framework.Controls
     [Designer(typeof(ControlDesigner))]
     public partial class BsAdvDataGridView : AdvancedDataGridView
     {
-        #region Public Constructors
-
         public BsAdvDataGridView() => InitializeComponent();
-
-        #endregion Public Constructors
-
-        #region Events
 
         private static bool CheckColumns(DataGridViewColumn c)
         {
@@ -25,7 +19,7 @@ namespace BigSoft.Framework.Controls
                 || name.Contains("status");
         }
 
-        private static Func<DataGridViewColumn, bool> MakeColumnsUnvisible()
+        private static Func<DataGridViewColumn, bool> CheckColumnName()
         {
             return CheckColumns;
         }
@@ -33,13 +27,11 @@ namespace BigSoft.Framework.Controls
         private void BsAdvDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             //Func<DataGridViewColumn, bool> predicate = i => i.Name.Contains("id");
-            foreach (var item in Columns.Cast<DataGridViewColumn>().Where(MakeColumnsUnvisible()).ToList())
+            foreach (var item in Columns.Cast<DataGridViewColumn>().Where(CheckColumnName()).ToList())
             {
                 item.Visible = false;
             }
             ClearSelection();
         }
-
-        #endregion Events
     }
 }

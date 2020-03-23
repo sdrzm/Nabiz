@@ -58,34 +58,5 @@ namespace BigSoft.Framework.Util
 
             return result;
         }
-
-        public static void ClearControls(Control container)
-        {
-            foreach (Control control in container.Controls)
-            {
-                if (control is TextBox box)
-                {
-                    box.Clear();
-                }
-                if (control is MaskedTextBox mbox)
-                {
-                    mbox.Clear();
-                }
-                if (control is ListView view)
-                {
-                    view.Items.Clear();
-                }
-                if (control is GroupBox gbox)
-                {
-                    foreach (Control control1 in gbox.Controls)
-                    {
-                        if (control1 is TextBox box1)
-                        {
-                            box1.Clear();
-                        }
-                    }
-                }
-            }
-        }
     }
 }

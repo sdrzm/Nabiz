@@ -61,6 +61,7 @@
             this.BsStandartToolStrip.BsGetButtonVisible = true;
             this.BsStandartToolStrip.BsSaveButtonVisible = true;
             this.BsStandartToolStrip.BsUpdateButtonVisible = true;
+            this.BsStandartToolStrip.BsDeleteButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsDeleteButtonClicked);
             this.BsStandartToolStrip.BsGetButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsGetButtonClicked);
             this.BsStandartToolStrip.BsSaveButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsSaveButtonClicked);
             this.BsStandartToolStrip.BsUpdateButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsUpdateButtonClicked);

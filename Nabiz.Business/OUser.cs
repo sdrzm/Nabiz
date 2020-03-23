@@ -59,4 +59,16 @@ namespace Nabiz.Business
             BsRepository.BsUpdateContrib(_obj);
         }
     }
+
+    public class OUserDelete : BaseOperationDefault
+    {
+        private readonly User _obj;
+
+        public OUserDelete(User obj) => _obj = obj;
+
+        protected override void DoJob()
+        {
+            BsRepository.BsDeleteSoftContrib(_obj);
+        }
+    }
 }

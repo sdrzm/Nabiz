@@ -26,7 +26,6 @@ namespace Nabiz.UI.Forms
             OUserSave save = new OUserSave(obj);
             var result = save.Execute();
             BsMessageBox.Show(result);
-            ClearControls();
             GetFromReady();
         }
 
@@ -39,7 +38,15 @@ namespace Nabiz.UI.Forms
             OUserUpdate update = new OUserUpdate(obj);
             var result = update.Execute();
             BsMessageBox.Show(result);
-            ClearControls();
+            GetFromReady();
+        }
+
+        private void BsStandartToolStrip_BsDeleteButtonClicked(object sender, EventArgs e)
+        {
+            User obj = SetFromScreen<User>();
+            OUserDelete delete = new OUserDelete(obj);
+            var result = delete.Execute();
+            BsMessageBox.Show(result);
             GetFromReady();
         }
 
@@ -62,6 +69,7 @@ namespace Nabiz.UI.Forms
 
         private void GetFromReady()
         {
+            ClearControls();
             OUserGet get = new OUserGet(txtMacAddress.Text);
             var result = get.Execute();
             if (result.ResultType == ResultType.Successful)

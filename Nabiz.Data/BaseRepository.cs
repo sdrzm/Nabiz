@@ -85,6 +85,18 @@ namespace Nabiz.Data
             return BaseConnection.Update<T>(obj);
         }
 
+        public bool BsDeleteSoftContrib<T>(T obj) where T : BaseObject
+        {
+            obj.LastUpdated = Convert.ToInt64(DateTime.Now.ToString("yyyyMMddHHmmssfff"));
+            obj.Status = 0;
+            return BaseConnection.Update<T>(obj);
+        }
+
+        public bool BsDeleteContrib<T>(T obj) where T : BaseObject
+        {
+            return BaseConnection.Delete(obj);
+        }
+
         #endregion Contrib
 
         #endregion DbOperations

@@ -105,3 +105,54 @@
 2020-03-23 22:51:49|INFO|Caller Method: GetFromReady, Line: 66
 2020-03-23 22:51:57|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
 2020-03-23 22:51:57|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 23:20:02|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:20:11|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-23 23:20:13|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:22:15|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:22:19|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-23 23:22:20|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:35:58|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:39:27|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:47:49|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:47:59|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-23 23:48:01|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:48:11|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-23 23:48:11|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 45
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 23:48:12|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-23 23:48:23|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-23 23:48:23|ERROR|SystemError | code = Constraint (19), message = System.Data.SQLite.SQLiteException (0x800027AF): constraint failed
+UNIQUE constraint failed: User.MacAddress
+   at System.Data.SQLite.SQLite3.Reset(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLite3.Step(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in C:\projects\dapper\Dapper\SqlMapper.cs:line 1051
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in C:\projects\dapper\Dapper\SqlMapper.cs:line 1043
+   at SQLiteAdapter.Insert(IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout, String tableName, String columnList, String parameterList, IEnumerable`1 keyProperties, Object entityToInsert) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 1063
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.Insert[T](IDbConnection connection, T entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 375
+   at Nabiz.Data.BaseRepository.BsInsertContrib[T](T obj) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 79
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 46
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 23:48:31|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:03:41|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:03:54|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:04:04|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:04:09|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 39
+2020-03-24 00:04:10|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:04:44|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 39
+2020-03-24 00:04:45|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:04:59|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 39
+2020-03-24 00:04:59|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserUpdate.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 58
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 00:05:00|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:05:06|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:05:25|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:05:26|INFO|Caller Method: GetFromReady, Line: 74

@@ -32,7 +32,6 @@
             // 
             // OkTextBox
             // 
-            this.TextChanged += new System.EventHandler(this.OkTextBox_TextChanged);
             this.ResumeLayout(false);
 
         }

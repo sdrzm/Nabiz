@@ -9,8 +9,7 @@ namespace Nabiz.Business
     public abstract class BaseOperation<T> where T : class
     {
         protected BsOpResult<T> BsOpResult = new BsOpResult<T>();
-        protected BaseRepository BsRepository { get; set; }
-        protected SQLiteConnection BsConnection { get; set; }
+        protected BaseRepository BsRepository { get; set; } = new BaseRepository();
 
         protected abstract void DoJob();
 
@@ -18,8 +17,7 @@ namespace Nabiz.Business
         {
             try
             {
-                BsRepository = new BaseRepository();
-                BsConnection = BsRepository.BaseConnection;
+                SQLiteConnection BsConnection = BsRepository.BaseConnection;
 
                 using (BsRepository.BaseConnection)
                 {

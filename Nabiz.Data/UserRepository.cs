@@ -13,11 +13,14 @@ namespace Nabiz.Data
         {
             string query;
             if (string.IsNullOrEmpty(macAddress))
-                query = "SELECT * FROM User";
+            {
+                return BsGetAllContrib<User>();
+            }
             else
+            {
                 query = string.Format("SELECT * FROM User WHERE MacAddress = '{0}'", macAddress);
-
-            return BsGetList<User>(query);
+                return BsGetList<User>(query);
+            }
         }
     }
 }

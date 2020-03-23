@@ -62,6 +62,7 @@
             this.BsStandartToolStrip.BsUpdateButtonVisible = true;
             this.BsStandartToolStrip.BsGetButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsGetButtonClicked);
             this.BsStandartToolStrip.BsSaveButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsSaveButtonClicked);
+            this.BsStandartToolStrip.BsUpdateButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsUpdateButtonClicked);
             // 
             // groupBox1
             // 

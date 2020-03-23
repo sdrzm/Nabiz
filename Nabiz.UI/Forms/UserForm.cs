@@ -30,6 +30,19 @@ namespace Nabiz.UI.Forms
             GetFromReady();
         }
 
+        private void BsStandartToolStrip_BsUpdateButtonClicked(object sender, EventArgs e)
+        {
+            if (OpResult.ResultType != ResultType.Successful)
+                return;
+
+            User obj = SetFromScreen<User>();
+            OUserUpdate update = new OUserUpdate(obj);
+            var result = update.Execute();
+            BsMessageBox.Show(result);
+            ClearControls();
+            GetFromReady();
+        }
+
         private void UserForm_Load(object sender, EventArgs e)
         {
             GetFromReady();
@@ -51,7 +64,8 @@ namespace Nabiz.UI.Forms
         {
             OUserGet get = new OUserGet(txtMacAddress.Text);
             var result = get.Execute();
-            BindDataAsList(result.Value);
+            if (result.ResultType == ResultType.Successful)
+                BindDataAsList(result.Value);
         }
     }
 }

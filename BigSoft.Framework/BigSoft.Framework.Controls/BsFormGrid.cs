@@ -24,6 +24,11 @@ namespace BigSoft.Framework.Controls
             CheckValidation(this);
         }
 
+        private void BsAdgv_SelectionChanged(object sender, EventArgs e)
+        {
+            BsStandartToolStrip.EnableUpdateDelete();
+        }
+
         #endregion Events
 
         private static DataTable ConvertToDatatable<T>(IEnumerable<T> source, params string[] members)

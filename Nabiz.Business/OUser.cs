@@ -56,7 +56,7 @@ namespace Nabiz.Business
         protected override void DoJob()
         {
             OUser.CheckExistence(_obj, BsRepository);
-            BsRepository.BsInsertContrib(_obj);
+            BsRepository.BsUpdateContrib(_obj);
         }
     }
 }

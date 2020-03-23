@@ -50,7 +50,8 @@ namespace BigSoft.Framework.Controls
         private void TsbClear_Click(object sender, EventArgs e)
         {
             BsForm bsForm = (BsForm)Parent.Parent;
-            bsForm.ClearControls(true);
+            bsForm.ClearControls();
+            DisableUpdateDelete();
         }
 
         private void TsbExit_Click(object sender, EventArgs e)

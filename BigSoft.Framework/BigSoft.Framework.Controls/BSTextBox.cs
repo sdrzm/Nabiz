@@ -88,15 +88,24 @@ namespace BigSoft.Framework.Controls
 
         public object GetValue(Type type)
         {
-            return Text;
+            if (type == typeof(string))
+                return Text;
+            else if (type == typeof(short))
+                return Convert.ToInt16(Text);
+            else if (type == typeof(int))
+                return Convert.ToInt32(Text);
+            else if (type == typeof(long))
+                return Convert.ToInt64(Text);
+            else
+                return null;
         }
 
         public void SetValue(object value)
         {
-            if (value != null)
-            {
-                Text = (string)value;
-            }
+            if (value is string x)
+                Text = x;
+            else if (value is short || value is int || value is long)
+                Text = Convert.ToString(value);
         }
 
         #endregion Public Methods

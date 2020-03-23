@@ -205,6 +205,10 @@ namespace BigSoft.Framework.Controls
                     adg.CleanFilterAndSort();
                     adg.ClearSelection();
                 }
+                else if (control is BsStandartToolStrip tool)
+                {
+                    tool.DisableUpdateDelete();
+                }
             }
         }
 

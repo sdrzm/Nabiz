@@ -48,6 +48,7 @@
             // 
             this.BsPanelTop.Controls.Add(this.btnMacAddress);
             this.BsPanelTop.Controls.Add(this.groupBox1);
+            this.BsPanelTop.Controls.SetChildIndex(this.BsGuid, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.groupBox1, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.BsStandartToolStrip, 0);
             this.BsPanelTop.Controls.SetChildIndex(this.btnMacAddress, 0);
@@ -63,6 +64,12 @@
             this.BsStandartToolStrip.BsGetButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsGetButtonClicked);
             this.BsStandartToolStrip.BsSaveButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsSaveButtonClicked);
             this.BsStandartToolStrip.BsUpdateButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsUpdateButtonClicked);
+            // 
+            // BsGuid
+            // 
+            this.BsGuid.BsDataClassName = "User";
+            this.BsGuid.Location = new System.Drawing.Point(757, 147);
+            this.BsGuid.Size = new System.Drawing.Size(115, 20);
             // 
             // groupBox1
             // 

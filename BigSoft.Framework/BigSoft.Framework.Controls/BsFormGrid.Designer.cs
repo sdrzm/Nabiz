@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BsStatusStrip = new System.Windows.Forms.StatusStrip();
             this.BsToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.BsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BsPanelTop = new System.Windows.Forms.Panel();
+            this.BsGuid = new BigSoft.Framework.Controls.BsTextBox(this.components);
             this.BsStandartToolStrip = new BigSoft.Framework.Controls.BsStandartToolStrip();
             this.BsPanelFill = new System.Windows.Forms.Panel();
             this.BsAdgv = new BigSoft.Framework.Controls.BsAdvDataGridView();
@@ -49,17 +50,16 @@
             this.BsStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.BsStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BsToolStripStatusLabel});
-            this.BsStatusStrip.Location = new System.Drawing.Point(0, 541);
+            this.BsStatusStrip.Location = new System.Drawing.Point(0, 439);
             this.BsStatusStrip.Name = "BsStatusStrip";
-            this.BsStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.BsStatusStrip.Size = new System.Drawing.Size(1179, 26);
+            this.BsStatusStrip.Size = new System.Drawing.Size(884, 22);
             this.BsStatusStrip.TabIndex = 3;
             this.BsStatusStrip.Text = "BsStatusStrip";
             // 
             // BsToolStripStatusLabel
             // 
             this.BsToolStripStatusLabel.Name = "BsToolStripStatusLabel";
-            this.BsToolStripStatusLabel.Size = new System.Drawing.Size(151, 20);
+            this.BsToolStripStatusLabel.Size = new System.Drawing.Size(118, 17);
             this.BsToolStripStatusLabel.Text = "toolStripStatusLabel1";
             // 
             // BsBindingSource
@@ -68,13 +68,22 @@
             // 
             // BsPanelTop
             // 
+            this.BsPanelTop.Controls.Add(this.BsGuid);
             this.BsPanelTop.Controls.Add(this.BsStandartToolStrip);
             this.BsPanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.BsPanelTop.Location = new System.Drawing.Point(0, 0);
-            this.BsPanelTop.Margin = new System.Windows.Forms.Padding(4);
             this.BsPanelTop.Name = "BsPanelTop";
-            this.BsPanelTop.Size = new System.Drawing.Size(1179, 213);
+            this.BsPanelTop.Size = new System.Drawing.Size(884, 173);
             this.BsPanelTop.TabIndex = 4;
+            // 
+            // BsGuid
+            // 
+            this.BsGuid.BsDataClassName = null;
+            this.BsGuid.BsDataFieldName = "Guid";
+            this.BsGuid.Location = new System.Drawing.Point(846, 147);
+            this.BsGuid.Name = "BsGuid";
+            this.BsGuid.Size = new System.Drawing.Size(26, 20);
+            this.BsGuid.TabIndex = 1;
             // 
             // BsStandartToolStrip
             // 
@@ -84,9 +93,9 @@
             this.BsStandartToolStrip.BsUpdateButtonEnabled = false;
             this.BsStandartToolStrip.Dock = System.Windows.Forms.DockStyle.Top;
             this.BsStandartToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.BsStandartToolStrip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BsStandartToolStrip.Margin = new System.Windows.Forms.Padding(2);
             this.BsStandartToolStrip.Name = "BsStandartToolStrip";
-            this.BsStandartToolStrip.Size = new System.Drawing.Size(1179, 31);
+            this.BsStandartToolStrip.Size = new System.Drawing.Size(884, 31);
             this.BsStandartToolStrip.TabIndex = 0;
             this.BsStandartToolStrip.BsSaveButtonClicked += new System.EventHandler(this.BsStandartToolStrip_BsSaveButtonClicked);
             // 
@@ -94,10 +103,9 @@
             // 
             this.BsPanelFill.Controls.Add(this.BsAdgv);
             this.BsPanelFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BsPanelFill.Location = new System.Drawing.Point(0, 213);
-            this.BsPanelFill.Margin = new System.Windows.Forms.Padding(4);
+            this.BsPanelFill.Location = new System.Drawing.Point(0, 173);
             this.BsPanelFill.Name = "BsPanelFill";
-            this.BsPanelFill.Size = new System.Drawing.Size(1179, 328);
+            this.BsPanelFill.Size = new System.Drawing.Size(884, 266);
             this.BsPanelFill.TabIndex = 5;
             // 
             // BsAdgv
@@ -105,14 +113,13 @@
             this.BsAdgv.AllowUserToAddRows = false;
             this.BsAdgv.AllowUserToDeleteRows = false;
             this.BsAdgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.BsAdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BsAdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.BsAdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BsAdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BsAdgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BsAdgv.FilterAndSortEnabled = true;
             this.BsAdgv.Location = new System.Drawing.Point(0, 0);
-            this.BsAdgv.Margin = new System.Windows.Forms.Padding(4);
             this.BsAdgv.MultiSelect = false;
             this.BsAdgv.Name = "BsAdgv";
             this.BsAdgv.ReadOnly = true;
@@ -120,18 +127,18 @@
             this.BsAdgv.RowHeadersWidth = 51;
             this.BsAdgv.RowTemplate.Height = 20;
             this.BsAdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BsAdgv.Size = new System.Drawing.Size(1179, 328);
+            this.BsAdgv.Size = new System.Drawing.Size(884, 266);
             this.BsAdgv.TabIndex = 1;
+            this.BsAdgv.SelectionChanged += new System.EventHandler(this.BsAdgv_SelectionChanged);
             // 
             // BsFormGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 567);
+            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.BsPanelFill);
             this.Controls.Add(this.BsPanelTop);
             this.Controls.Add(this.BsStatusStrip);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BsFormGrid";
             this.Text = "BsFormGrid";
             this.BsStatusStrip.ResumeLayout(false);
@@ -154,5 +161,6 @@
         protected System.Windows.Forms.Panel BsPanelTop;
         protected System.Windows.Forms.Panel BsPanelFill;
         protected BsStandartToolStrip BsStandartToolStrip;
+        protected BsTextBox BsGuid;
     }
 }

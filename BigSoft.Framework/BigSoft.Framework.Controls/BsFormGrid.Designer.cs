@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BsStatusStrip = new System.Windows.Forms.StatusStrip();
             this.BsToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.BsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -84,6 +84,7 @@
             this.BsGuid.Name = "BsGuid";
             this.BsGuid.Size = new System.Drawing.Size(26, 20);
             this.BsGuid.TabIndex = 1;
+            this.BsGuid.Visible = false;
             // 
             // BsStandartToolStrip
             // 
@@ -113,8 +114,8 @@
             this.BsAdgv.AllowUserToAddRows = false;
             this.BsAdgv.AllowUserToDeleteRows = false;
             this.BsAdgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.BsAdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BsAdgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.BsAdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BsAdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BsAdgv.Dock = System.Windows.Forms.DockStyle.Fill;

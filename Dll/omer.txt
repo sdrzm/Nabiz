@@ -75,3 +75,33 @@
 2020-03-23 22:44:20|INFO|Caller Method: GetFromReady, Line: 66
 2020-03-23 22:44:55|INFO|Caller Method: GetFromReady, Line: 66
 2020-03-23 22:44:59|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:48:55|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:49:26|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:49:27|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:49:47|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:49:47|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserUpdate.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 58
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 22:49:49|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:50:12|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:50:12|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserUpdate.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 58
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 22:50:13|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:50:17|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:50:18|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserUpdate.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 58
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 22:50:18|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:50:22|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:50:22|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserUpdate.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 58
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-23 22:50:23|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:51:49|INFO|Caller Method: GetFromReady, Line: 66
+2020-03-23 22:51:57|INFO|Caller Method: BsStandartToolStrip_BsUpdateButtonClicked, Line: 40
+2020-03-23 22:51:57|INFO|Caller Method: GetFromReady, Line: 66

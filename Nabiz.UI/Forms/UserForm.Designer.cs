@@ -68,8 +68,8 @@
             // BsGuid
             // 
             this.BsGuid.BsDataClassName = "User";
-            this.BsGuid.Location = new System.Drawing.Point(757, 147);
-            this.BsGuid.Size = new System.Drawing.Size(115, 20);
+            this.BsGuid.Location = new System.Drawing.Point(822, 147);
+            this.BsGuid.Size = new System.Drawing.Size(50, 20);
             // 
             // groupBox1
             // 

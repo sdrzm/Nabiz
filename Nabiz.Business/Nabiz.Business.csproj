@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseOperation.cs" />
+    <Compile Include="OChoiceGroup.cs" />
+    <Compile Include="OChoiceType.cs" />
+    <Compile Include="OQuestion.cs" />
     <Compile Include="OUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

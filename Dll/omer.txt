@@ -156,3 +156,412 @@ UNIQUE constraint failed: User.MacAddress
 2020-03-24 00:05:06|INFO|Caller Method: GetFromReady, Line: 74
 2020-03-24 00:05:25|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
 2020-03-24 00:05:26|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:08:03|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:08:08|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:08:10|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:09:25|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:09:27|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:14:40|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:14:41|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:16:13|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:16:15|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:16:43|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:16:45|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:17:10|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:17:10|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 45
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 00:17:11|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:17:35|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:17:35|ERROR|SystemError | code = Constraint (19), message = System.Data.SQLite.SQLiteException (0x800027AF): constraint failed
+UNIQUE constraint failed: User.MacAddress, User.Status
+   at System.Data.SQLite.SQLite3.Reset(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLite3.Step(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in C:\projects\dapper\Dapper\SqlMapper.cs:line 2797
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in C:\projects\dapper\Dapper\SqlMapper.cs:line 568
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.Update[T](IDbConnection connection, T entityToUpdate, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 455
+   at Nabiz.Data.BaseRepository.BsDeleteSoftContrib[T](T obj) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 92
+   at Nabiz.Business.OUserDelete.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 71
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 00:17:40|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:18:51|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:18:52|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:18:55|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:18:56|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:20:08|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:20:59|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:01|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:21:25|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:26|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:21:28|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:29|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:21:36|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:38|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:21:40|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:40|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:21:44|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:21:44|ERROR|UserError | BigSoft.Framework.Util.BsException: Zaten mevcut kayit
+   at Nabiz.Business.OUser.CheckExistence(User obj, BaseRepository baseRepo) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 20
+   at Nabiz.Business.OUserSave.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 45
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 00:21:45|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:26:21|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:26:25|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:26:25|ERROR|SystemError | code = Constraint (19), message = System.Data.SQLite.SQLiteException (0x800027AF): constraint failed
+UNIQUE constraint failed: User.MacAddress, User.Status
+   at System.Data.SQLite.SQLite3.Reset(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLite3.Step(SQLiteStatement stmt)
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in C:\projects\dapper\Dapper\SqlMapper.cs:line 2797
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in C:\projects\dapper\Dapper\SqlMapper.cs:line 568
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.Update[T](IDbConnection connection, T entityToUpdate, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 455
+   at Nabiz.Data.BaseRepository.BsDeleteSoftContrib[T](T obj) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 92
+   at Nabiz.Business.OUserDelete.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OUser.cs:line 71
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 00:26:27|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:26:34|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:26:35|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:26:49|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:27:44|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:27:56|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:27:57|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:27:57|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:05|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:06|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:06|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:06|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:08|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:08|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:09|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:28:14|INFO|Caller Method: BsStandartToolStrip_BsDeleteButtonClicked, Line: 48
+2020-03-24 00:28:15|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 00:29:50|INFO|Caller Method: BsStandartToolStrip_BsSaveButtonClicked, Line: 27
+2020-03-24 00:29:51|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:10:17|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:48:55|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:48:56|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize27a1a029-8109-4df3-bf9a-8daaf3d7b9f9(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize27a1a029-8109-4df3-bf9a-8daaf3d7b9f9(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:49:32|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:49:35|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:49:36|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:49:41|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:49:42|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:49:42|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:49:42|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:49:42|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:49:43|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:49:43|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize2f1fa13f-500d-4c3b-8ffb-b686973654b8(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:50:00|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:50:03|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:50:03|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:50:03|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:50:03|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:50:05|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:50:05|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:50:28|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:50:28|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize1e7f959e-458a-4708-8c48-ed70d3f44271(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:58:26|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:58:27|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize0409e6dd-0b1b-4622-9cb7-bcd33b20b754(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize0409e6dd-0b1b-4622-9cb7-bcd33b20b754(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:58:31|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:58:36|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:58:36|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize0409e6dd-0b1b-4622-9cb7-bcd33b20b754(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize0409e6dd-0b1b-4622-9cb7-bcd33b20b754(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 14:58:37|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 14:59:33|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 14:59:33|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize25db3baa-76cc-4571-821d-17e240f087ea(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize25db3baa-76cc-4571-821d-17e240f087ea(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:01:01|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:01:02|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize0b4c4011-aac3-4cf3-bdfe-a4822f26575a(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize0b4c4011-aac3-4cf3-bdfe-a4822f26575a(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:01:17|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:01:17|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize0b4c4011-aac3-4cf3-bdfe-a4822f26575a(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize0b4c4011-aac3-4cf3-bdfe-a4822f26575a(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:02:41|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:02:41|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize48284062-8869-467b-89aa-f092d1b5dfa8(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize48284062-8869-467b-89aa-f092d1b5dfa8(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:02:54|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:02:54|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserialize48284062-8869-467b-89aa-f092d1b5dfa8(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserialize48284062-8869-467b-89aa-f092d1b5dfa8(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:04:23|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:04:24|ERROR|SystemError | System.Data.DataException: Error parsing column 2 (ChoiceGroupName=Party - String) ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType)
+   at Deserializecff2273f-129e-4bbb-b866-d2d6367e3736(IDataReader )
+   --- End of inner exception stack trace ---
+   at Dapper.SqlMapper.ThrowDataException(Exception ex, Int32 index, IDataReader reader, Object value) in C:\projects\dapper\Dapper\SqlMapper.cs:line 3633
+   at Deserializecff2273f-129e-4bbb-b866-d2d6367e3736(IDataReader )
+   at Dapper.SqlMapper.<QueryImpl>d__140`1.MoveNext() in C:\projects\dapper\Dapper\SqlMapper.cs:line 1098
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in C:\projects\dapper\Dapper\SqlMapper.cs:line 721
+   at Dapper.Contrib.Extensions.SqlMapperExtensions.GetAll[T](IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\projects\dapper\Dapper.Contrib\SqlMapperExtensions.cs:line 246
+   at Nabiz.Data.BaseRepository.BsGetAllContrib[T]() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Data\BaseRepository.cs:line 73
+   at Nabiz.Business.OQuestionGet.DoJob() in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\OQuestion.cs:line 34
+   at Nabiz.Business.BaseOperation`1.Execute(String metod, Int32 satir) in C:\Users\Omer\source\repos\Nabiz\Nabiz.Business\BaseOperation.cs:line 28
+2020-03-24 15:05:05|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:17:11|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:19:42|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 15:33:40|INFO|Caller Method: GetFromReady, Line: 75
+2020-03-24 20:51:21|INFO|Caller Method: GetFromReady, Line: 74
+2020-03-24 20:51:26|INFO|Caller Method: GetFromReady, Line: 75

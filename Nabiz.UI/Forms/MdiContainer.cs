@@ -1,17 +1,14 @@
-﻿using Nabiz.UI.Forms;
+﻿using BigSoft.Framework.Controls;
+using Nabiz.UI.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Nabiz.UI
 {
     public partial class MdiContainer : Form
     {
-        #region Public Properties
-
-        public UserForm UserForm { get; set; }
-
-        #endregion Public Properties
-
-        #region Public Constructors
+        public UserForm UserForm;
+        public QuestionForm QuestionForm;
 
         public MdiContainer()
         {
@@ -19,23 +16,28 @@ namespace Nabiz.UI
             okTabBrowser.SetMdiForm(this);
         }
 
-        #endregion Public Constructors
-
-        #region Private Methods
-
         private void MenuUser_Click(object sender, System.EventArgs e)
         {
-            if (UserForm?.IsDisposed != false)
+            ShowForm(ref UserForm);
+        }
+
+        private void MenuQuestion_Click(object sender, System.EventArgs e)
+        {
+            ShowForm(ref QuestionForm);
+        }
+
+        private void ShowForm<T>(ref T form) where T : BsForm
+        {
+            if (form?.IsDisposed != false)
             {
-                UserForm = new UserForm { MdiParent = this };
-                UserForm.Show();
+                form = (T)Activator.CreateInstance(typeof(T));
+                form.MdiParent = this;
+                form.Show();
             }
             else
             {
-                UserForm.Activate();
+                form.Activate();
             }
         }
-
-        #endregion Private Methods
     }
 }

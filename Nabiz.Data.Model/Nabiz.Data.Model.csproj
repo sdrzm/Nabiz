@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="BaseObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChoiceGroup.cs" />
+    <Compile Include="ChoiceType.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

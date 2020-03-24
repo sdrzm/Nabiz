@@ -55,6 +55,18 @@
     <Compile Include="Forms\MdiContainer.designer.cs">
       <DependentUpon>MdiContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SurveyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SurveyForm.Designer.cs">
+      <DependentUpon>SurveyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuestionForm.Designer.cs">
+      <DependentUpon>QuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MdiContainer.resx">
       <DependentUpon>MdiContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SurveyForm.resx">
+      <DependentUpon>SurveyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuestionForm.resx">
+      <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
